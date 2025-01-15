@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contrrols\UserControlTovar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contrrols\UserControlTovar.Designer.cs">
+      <DependentUpon>UserControlTovar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Clietn.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Contrrols\UserControlTovar.resx">
+      <DependentUpon>UserControlTovar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,11 +181,10 @@
       <LastGenOutput>Posuda.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\picture.png" />
     <None Include="Resources\logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contrrols\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
