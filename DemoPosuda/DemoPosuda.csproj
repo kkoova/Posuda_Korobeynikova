@@ -115,6 +115,12 @@
     <Compile Include="Data\Zakaz.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddTovar.Designer.cs">
+      <DependentUpon>AddTovar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Contrrols\UserControlTovar.resx">
       <DependentUpon>UserControlTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddTovar.resx">
+      <DependentUpon>AddTovar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

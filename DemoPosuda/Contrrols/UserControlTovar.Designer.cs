@@ -37,6 +37,7 @@
             this.labelDeckTovar = new System.Windows.Forms.Label();
             this.labelNameTovar = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonDellTovar = new System.Windows.Forms.Button();
             this.labelKolSclad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,7 +74,7 @@
             this.labelPriseTovar.Font = new System.Drawing.Font("Comic Sans MS", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPriseTovar.Location = new System.Drawing.Point(97, 85);
             this.labelPriseTovar.Name = "labelPriseTovar";
-            this.labelPriseTovar.Size = new System.Drawing.Size(365, 15);
+            this.labelPriseTovar.Size = new System.Drawing.Size(290, 15);
             this.labelPriseTovar.TabIndex = 5;
             this.labelPriseTovar.Text = "1000";
             // 
@@ -126,6 +127,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
+            this.panel2.Controls.Add(this.buttonDellTovar);
             this.panel2.Controls.Add(this.labelKolSclad);
             this.panel2.Location = new System.Drawing.Point(685, 16);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -133,12 +135,23 @@
             this.panel2.Size = new System.Drawing.Size(103, 115);
             this.panel2.TabIndex = 2;
             // 
+            // buttonDellTovar
+            // 
+            this.buttonDellTovar.Enabled = false;
+            this.buttonDellTovar.Location = new System.Drawing.Point(28, 92);
+            this.buttonDellTovar.Name = "buttonDellTovar";
+            this.buttonDellTovar.Size = new System.Drawing.Size(75, 23);
+            this.buttonDellTovar.TabIndex = 6;
+            this.buttonDellTovar.Text = "Удалить";
+            this.buttonDellTovar.UseVisualStyleBackColor = true;
+            this.buttonDellTovar.Click += new System.EventHandler(this.buttonDellTovar_Click);
+            // 
             // labelKolSclad
             // 
             this.labelKolSclad.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelKolSclad.Location = new System.Drawing.Point(12, 12);
             this.labelKolSclad.Name = "labelKolSclad";
-            this.labelKolSclad.Size = new System.Drawing.Size(79, 88);
+            this.labelKolSclad.Size = new System.Drawing.Size(79, 73);
             this.labelKolSclad.TabIndex = 6;
             this.labelKolSclad.Text = "0";
             this.labelKolSclad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,6 +168,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "UserControlTovar";
             this.Size = new System.Drawing.Size(811, 149);
+            this.Click += new System.EventHandler(this.UserControlTovar_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -174,5 +188,6 @@
         private System.Windows.Forms.Label labelDeckTovar;
         private System.Windows.Forms.Label labelNameTovar;
         private System.Windows.Forms.Label labelKolSclad;
+        private System.Windows.Forms.Button buttonDellTovar;
     }
 }

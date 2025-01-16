@@ -30,26 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelUserFio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelUserFio = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButtonDown = new System.Windows.Forms.RadioButton();
+            this.radioButtonUp = new System.Windows.Forms.RadioButton();
+            this.textBoxFindName = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanelTovar = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.акаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanelTovar = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBoxProizvod = new System.Windows.Forms.ComboBox();
+            this.labelStats = new System.Windows.Forms.Label();
+            this.AddТоварToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxFindName = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButtonUp = new System.Windows.Forms.RadioButton();
-            this.radioButtonDown = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,28 +70,6 @@
             this.panel1.Size = new System.Drawing.Size(850, 115);
             this.panel1.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.25F);
-            this.label2.Location = new System.Drawing.Point(121, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ООО «Посуда»";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24.25F);
-            this.label1.Location = new System.Drawing.Point(117, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ООО «Посуда»";
-            // 
             // labelUserFio
             // 
             this.labelUserFio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -101,8 +82,32 @@
             this.labelUserFio.Text = "Гость";
             this.labelUserFio.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.25F);
+            this.label2.Location = new System.Drawing.Point(121, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Главная";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24.25F);
+            this.label1.Location = new System.Drawing.Point(117, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(267, 46);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ООО «Посуда»";
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.labelStats);
+            this.panel2.Controls.Add(this.comboBoxProizvod);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.textBoxFindName);
             this.panel2.Controls.Add(this.flowLayoutPanelTovar);
@@ -111,6 +116,58 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(850, 399);
             this.panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButtonDown);
+            this.panel3.Controls.Add(this.radioButtonUp);
+            this.panel3.Location = new System.Drawing.Point(647, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 22);
+            this.panel3.TabIndex = 3;
+            // 
+            // radioButtonDown
+            // 
+            this.radioButtonDown.AutoSize = true;
+            this.radioButtonDown.Location = new System.Drawing.Point(105, 4);
+            this.radioButtonDown.Name = "radioButtonDown";
+            this.radioButtonDown.Size = new System.Drawing.Size(78, 19);
+            this.radioButtonDown.TabIndex = 1;
+            this.radioButtonDown.TabStop = true;
+            this.radioButtonDown.Text = "Убывание";
+            this.radioButtonDown.UseVisualStyleBackColor = true;
+            this.radioButtonDown.CheckedChanged += new System.EventHandler(this.radioButtonDown_CheckedChanged);
+            // 
+            // radioButtonUp
+            // 
+            this.radioButtonUp.AutoSize = true;
+            this.radioButtonUp.Location = new System.Drawing.Point(3, 4);
+            this.radioButtonUp.Name = "radioButtonUp";
+            this.radioButtonUp.Size = new System.Drawing.Size(92, 19);
+            this.radioButtonUp.TabIndex = 0;
+            this.radioButtonUp.TabStop = true;
+            this.radioButtonUp.Text = "Возрастание";
+            this.radioButtonUp.UseVisualStyleBackColor = true;
+            this.radioButtonUp.CheckedChanged += new System.EventHandler(this.radioButtonUp_CheckedChanged);
+            // 
+            // textBoxFindName
+            // 
+            this.textBoxFindName.Location = new System.Drawing.Point(3, 49);
+            this.textBoxFindName.Name = "textBoxFindName";
+            this.textBoxFindName.Size = new System.Drawing.Size(398, 23);
+            this.textBoxFindName.TabIndex = 2;
+            this.textBoxFindName.TextChanged += new System.EventHandler(this.textBoxFindName_TextChanged);
+            // 
+            // flowLayoutPanelTovar
+            // 
+            this.flowLayoutPanelTovar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelTovar.AutoScroll = true;
+            this.flowLayoutPanelTovar.Location = new System.Drawing.Point(3, 79);
+            this.flowLayoutPanelTovar.Name = "flowLayoutPanelTovar";
+            this.flowLayoutPanelTovar.Size = new System.Drawing.Size(844, 317);
+            this.flowLayoutPanelTovar.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -126,7 +183,8 @@
             // товарыToolStripMenuItem
             // 
             this.товарыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ShowToolStripMenuItem});
+            this.ShowToolStripMenuItem,
+            this.AddТоварToolStripMenuItem});
             this.товарыToolStripMenuItem.Name = "товарыToolStripMenuItem";
             this.товарыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.товарыToolStripMenuItem.Text = "Товары";
@@ -134,7 +192,7 @@
             // ShowToolStripMenuItem
             // 
             this.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem";
-            this.ShowToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.ShowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ShowToolStripMenuItem.Text = "Просмотр";
             this.ShowToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
             // 
@@ -149,20 +207,35 @@
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.ExitToolStripMenuItem.Text = "Выйти";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // flowLayoutPanelTovar
+            // comboBoxProizvod
             // 
-            this.flowLayoutPanelTovar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelTovar.AutoScroll = true;
-            this.flowLayoutPanelTovar.Location = new System.Drawing.Point(3, 79);
-            this.flowLayoutPanelTovar.Name = "flowLayoutPanelTovar";
-            this.flowLayoutPanelTovar.Size = new System.Drawing.Size(844, 317);
-            this.flowLayoutPanelTovar.TabIndex = 1;
+            this.comboBoxProizvod.FormattingEnabled = true;
+            this.comboBoxProizvod.Location = new System.Drawing.Point(407, 49);
+            this.comboBoxProizvod.Name = "comboBoxProizvod";
+            this.comboBoxProizvod.Size = new System.Drawing.Size(234, 23);
+            this.comboBoxProizvod.TabIndex = 4;
+            this.comboBoxProizvod.SelectedIndexChanged += new System.EventHandler(this.comboBoxProizvod_SelectedIndexChanged);
+            // 
+            // labelStats
+            // 
+            this.labelStats.Location = new System.Drawing.Point(407, 31);
+            this.labelStats.Name = "labelStats";
+            this.labelStats.Size = new System.Drawing.Size(437, 15);
+            this.labelStats.TabIndex = 5;
+            this.labelStats.Text = "Количество товара";
+            this.labelStats.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // AddТоварToolStripMenuItem
+            // 
+            this.AddТоварToolStripMenuItem.Name = "AddТоварToolStripMenuItem";
+            this.AddТоварToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AddТоварToolStripMenuItem.Text = "Добавить товар";
+            this.AddТоварToolStripMenuItem.Visible = false;
+            this.AddТоварToolStripMenuItem.Click += new System.EventHandler(this.AddТоварToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -174,47 +247,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBoxFindName
-            // 
-            this.textBoxFindName.Location = new System.Drawing.Point(3, 27);
-            this.textBoxFindName.Name = "textBoxFindName";
-            this.textBoxFindName.Size = new System.Drawing.Size(285, 23);
-            this.textBoxFindName.TabIndex = 2;
-            this.textBoxFindName.TextChanged += new System.EventHandler(this.textBoxFindName_TextChanged);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radioButtonDown);
-            this.panel3.Controls.Add(this.radioButtonUp);
-            this.panel3.Location = new System.Drawing.Point(647, 27);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 32);
-            this.panel3.TabIndex = 3;
-            // 
-            // radioButtonUp
-            // 
-            this.radioButtonUp.AutoSize = true;
-            this.radioButtonUp.Location = new System.Drawing.Point(3, 4);
-            this.radioButtonUp.Name = "radioButtonUp";
-            this.radioButtonUp.Size = new System.Drawing.Size(92, 19);
-            this.radioButtonUp.TabIndex = 0;
-            this.radioButtonUp.TabStop = true;
-            this.radioButtonUp.Text = "Возрастание";
-            this.radioButtonUp.UseVisualStyleBackColor = true;
-            this.radioButtonUp.EnabledChanged += new System.EventHandler(this.radioButtonUp_EnabledChanged);
-            // 
-            // radioButtonDown
-            // 
-            this.radioButtonDown.AutoSize = true;
-            this.radioButtonDown.Location = new System.Drawing.Point(105, 4);
-            this.radioButtonDown.Name = "radioButtonDown";
-            this.radioButtonDown.Size = new System.Drawing.Size(78, 19);
-            this.radioButtonDown.TabIndex = 1;
-            this.radioButtonDown.TabStop = true;
-            this.radioButtonDown.Text = "Убывание";
-            this.radioButtonDown.UseVisualStyleBackColor = true;
-            this.radioButtonDown.EnabledChanged += new System.EventHandler(this.radioButtonDown_EnabledChanged);
             // 
             // Main
             // 
@@ -235,11 +267,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +294,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton radioButtonDown;
         private System.Windows.Forms.RadioButton radioButtonUp;
+        private System.Windows.Forms.ComboBox comboBoxProizvod;
+        private System.Windows.Forms.Label labelStats;
+        private System.Windows.Forms.ToolStripMenuItem AddТоварToolStripMenuItem;
     }
 }
