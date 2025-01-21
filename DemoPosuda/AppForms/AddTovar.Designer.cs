@@ -52,6 +52,8 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.comboBoxName = new System.Windows.Forms.ComboBox();
             this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
+            this.comboBoxProizvod = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColVo)).BeginInit();
@@ -200,15 +202,15 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(28, 334);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 23);
+            this.label9.Size = new System.Drawing.Size(86, 23);
             this.label9.TabIndex = 15;
-            this.label9.Text = "label9";
+            this.label9.Text = "Описание";
             // 
             // textBoxDeck
             // 
             this.textBoxDeck.Location = new System.Drawing.Point(160, 331);
             this.textBoxDeck.Name = "textBoxDeck";
-            this.textBoxDeck.Size = new System.Drawing.Size(630, 30);
+            this.textBoxDeck.Size = new System.Drawing.Size(237, 30);
             this.textBoxDeck.TabIndex = 16;
             // 
             // label10
@@ -216,9 +218,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(28, 395);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 23);
+            this.label10.Size = new System.Drawing.Size(114, 23);
             this.label10.TabIndex = 17;
-            this.label10.Text = "label10";
+            this.label10.Text = "Изображение:";
             // 
             // buttonImage
             // 
@@ -268,6 +270,23 @@
             this.openFileDialogImage.FileName = "openFileDialogImage";
             this.openFileDialogImage.Filter = "\"Изображения (*.jpg)|*.jpg|Все файлы (*.*)|*.*\"";
             // 
+            // comboBoxProizvod
+            // 
+            this.comboBoxProizvod.FormattingEnabled = true;
+            this.comboBoxProizvod.Location = new System.Drawing.Point(553, 326);
+            this.comboBoxProizvod.Name = "comboBoxProizvod";
+            this.comboBoxProizvod.Size = new System.Drawing.Size(236, 31);
+            this.comboBoxProizvod.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(426, 329);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(125, 23);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Производтель:";
+            // 
             // AddTovar
             // 
             this.AcceptButton = this.buttonAdd;
@@ -276,6 +295,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(802, 523);
+            this.Controls.Add(this.comboBoxProizvod);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBoxName);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAdd);
@@ -297,7 +318,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AddTovar";
             this.Text = "Добавление товара";
             this.panel1.ResumeLayout(false);
@@ -334,5 +355,7 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ComboBox comboBoxName;
         private System.Windows.Forms.OpenFileDialog openFileDialogImage;
+        private System.Windows.Forms.ComboBox comboBoxProizvod;
+        private System.Windows.Forms.Label label11;
     }
 }

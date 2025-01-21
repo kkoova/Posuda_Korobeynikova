@@ -1,4 +1,4 @@
-﻿using DemoPosuda.Data;
+﻿using DemoPosuda.Models;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,6 +7,8 @@ namespace DemoPosuda.Forms
 {
     public partial class SingIn : Form
     {
+        public Sotrydnik ReturnedValue { get; set; }
+
         public SingIn()
         {
             InitializeComponent();
@@ -38,32 +40,15 @@ namespace DemoPosuda.Forms
                     return;
                 }
 
-                MessageBox.Show($"Добро пожаловать {user.fio_sotr} Роль: {user.RoleSotrudnik.role_sotr}");
-
-                Hide();
-
-                using (var main = new Main(user))
-                {
-                    if (main.ShowDialog() == DialogResult.Cancel){
-                        main.Close();
-                        Show();
-                    }
-                }
+                ReturnedValue = user;
             }
+            DialogResult = DialogResult.OK;
         }
 
         private void buttonGoNoSign_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Добро пожаловать! Вы вошли как гость");
-
-            using (var main = new Main())
-            {
-                if (main.ShowDialog() == DialogResult.Cancel)
-                {
-                    main.Close();
-                    Show();
-                }
-            }
+            ReturnedValue = null;
+            DialogResult = DialogResult.OK;
         }
     }
 }

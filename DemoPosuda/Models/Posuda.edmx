@@ -70,9 +70,10 @@
         </EntityType>
         <EntityType Name="Tovar">
           <Key>
-            <PropertyRef Name="articyl_tovar" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="articyl_tovar" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="articyl_tovar" Type="nvarchar" MaxLength="255" />
           <Property Name="id_name_tovar" Type="int" />
           <Property Name="ediz_tovar" Type="nvarchar" MaxLength="255" />
           <Property Name="cost_tovar" Type="float" />
@@ -111,7 +112,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="id_artic_zakaz" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_artic_zakaz" Type="int" />
           <Property Name="kolvo_tovar_in_zakaz" Type="float" />
           <Property Name="data_zakaz" Type="datetime" />
           <Property Name="data_dostav_zakaz" Type="datetime" />
@@ -233,7 +234,7 @@
           <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tovar">
-              <PropertyRef Name="articyl_tovar" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Zakaz">
               <PropertyRef Name="id_artic_zakaz" />
@@ -372,9 +373,10 @@
         </EntityType>
         <EntityType Name="Tovar">
           <Key>
-            <PropertyRef Name="articyl_tovar" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="articyl_tovar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="articyl_tovar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="id_name_tovar" Type="Int32" />
           <Property Name="ediz_tovar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="cost_tovar" Type="Double" />
@@ -421,7 +423,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="id_artic_zakaz" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_artic_zakaz" Type="Int32" />
           <Property Name="kolvo_tovar_in_zakaz" Type="Double" />
           <Property Name="data_zakaz" Type="DateTime" Precision="3" />
           <Property Name="data_dostav_zakaz" Type="DateTime" Precision="3" />
@@ -547,7 +549,7 @@
           <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tovar">
-              <PropertyRef Name="articyl_tovar" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Zakaz">
               <PropertyRef Name="id_artic_zakaz" />
@@ -687,6 +689,7 @@
           <EntitySetMapping Name="Tovar">
             <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Tovar">
               <MappingFragment StoreEntitySet="Tovar">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="articyl_tovar" ColumnName="articyl_tovar" />
                 <ScalarProperty Name="id_name_tovar" ColumnName="id_name_tovar" />
                 <ScalarProperty Name="ediz_tovar" ColumnName="ediz_tovar" />

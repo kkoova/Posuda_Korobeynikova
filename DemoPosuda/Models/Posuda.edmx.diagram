@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c8671e1c9cd847389a7358ed7749c76a" Name="Diagram1" ZoomLevel="72">
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Clietn" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Postavchik" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Proizvod" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Punkt" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.RoleSotrudnik" Width="1.5" PointX="5.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Sotrydnik" Width="1.5" PointX="8" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Status" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+      <Diagram DiagramId="7d17800d96b24af08666da419b0ca5b0" Name="Diagram1">
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Clietn" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Postavchik" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Proizvod" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Punkt" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.RoleSotrudnik" Width="1.5" PointX="2.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Sotrydnik" Width="1.5" PointX="5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Status" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Tovar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.TovarCategory" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.TovarName" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.TypeClient" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Zakaz" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.TovarCategory" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.TovarName" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.TypeClient" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KorobeynikovaPosudaModel.Zakaz" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="KorobeynikovaPosudaModel.FK_Clietn_TypeClient" ManuallyRouted="false" />
         <AssociationConnector Association="KorobeynikovaPosudaModel.FK_Zakaz_Clietn" ManuallyRouted="false" />
         <AssociationConnector Association="KorobeynikovaPosudaModel.FK_Tovar_Postavchik" ManuallyRouted="false" />

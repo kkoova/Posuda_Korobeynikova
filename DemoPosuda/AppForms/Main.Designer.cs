@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelStats = new System.Windows.Forms.Label();
             this.comboBoxProizvod = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,8 +50,6 @@
             this.AddТоварToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.акаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -131,6 +131,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(850, 399);
             this.panel2.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(404, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(197, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Производитель товара";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Название товара";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelStats
             // 
@@ -252,24 +270,6 @@
             this.ExitToolStripMenuItem.Text = "Выйти";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(3, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Название товара";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(404, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Производитель товара";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -284,7 +284,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Main";
             this.Text = "Главная";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

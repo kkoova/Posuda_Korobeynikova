@@ -1,8 +1,8 @@
-﻿using DemoPosuda.Data;
-using DemoPosuda.Forms;
+﻿using DemoPosuda.Forms;
+using DemoPosuda.Models;
+using System;
+using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace DemoPosuda.Contrrols
@@ -10,29 +10,34 @@ namespace DemoPosuda.Contrrols
     public partial class UserControlTovar : UserControl
     {
         private Tovar tovar { get; set; }
-        public UserControlTovar(Tovar tovar = null, string role = null)
+        private int role;
+        public UserControlTovar(Tovar tovar = null, int role = 4)
         {
             InitializeComponent();
 
             this.tovar = tovar;
+            this.role = role;
 
             SetData();
 
-            if (role == "Администратор")
+            if (role == 1)
                 buttonDellTovar.Enabled = true;
         }
 
         private void SetData()
         {
+            var costSale = tovar.cost_tovar * (tovar.curent_sale_tovar / 100);
+
             labelNameTovar.Text = tovar.TovarName.name_tovar;
-            labelPriseTovar.Text = tovar.cost_tovar.ToString();
+            labelPriseTovar.Text = costSale.ToString();
             labelDeckTovar.Text = tovar.deck_tovar;
             labelKolSclad.Text = tovar.kolvo_tovar.ToString();
             labelProizvTovar.Text = tovar.Proizvod.name_proizvod;
+            labelSale.Text = tovar.curent_sale_tovar.ToString();
 
             var picPath = tovar.image_tovar;
 
-            var path = Path.GetDirectoryName(picPath);
+            var path = AppContext.BaseDirectory;
 
             if (picPath == null)
             {
@@ -40,51 +45,25 @@ namespace DemoPosuda.Contrrols
                 return;
             }
 
-            pictureBoxTovar.Image = Image.FromFile($@"C:\Users\1101-22\Desktop\DemoPosuda\DemoPosuda\TovarImage\{tovar.image_tovar}");
-        }
-
-        private void buttonDellTovar_Click(object sender, System.EventArgs e)
-        {
-            if (MessageBox.Show("Вы точно хотите удаить этот товар?", "удаление",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel) return; 
-
-            using (var context = new KorobeynikovaPosudaEntities())
+            try
             {
-                var booll = context.Zakaz
-                    .Where(id => id.id_artic_zakaz == tovar.articyl_tovar)
-                    .ToList();
-
-                if (booll.Count != 0)
-                {
-                    MessageBox.Show("Этот товар уже заказали!", "Ошикбка", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                var delTovar = context.Tovar.Find(tovar.articyl_tovar);
-
-                context.Tovar.Remove(delTovar);
-
-                context.SaveChanges();
-
-                MessageBox.Show("Вы удалили товар!. Обновите страницу");
+                pictureBoxTovar.Image = Image.FromFile($"{path}\\TovarImage\\{picPath}");
             }
-
+            catch
+            {
+                MessageBox.Show("Ошибка изображения!");
+            }
         }
 
-        private void UserControlTovar_Click(object sender, System.EventArgs e)
+        private void UserControlTovar_Click(object sender, EventArgs e)
         {
-            using (var addTovar = new AddTovar(tovar))
+            if (role != 1) return;
+                
+            using (var edit = new AddTovar(tovar))
             {
-                if (addTovar.ShowDialog() == DialogResult.OK)
+                if (edit.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Вы успешшно отредактировали товар", "Успех");
-
-                    using (var context = new KorobeynikovaPosudaEntities())
-                    {
-                        tovar = context.Tovar.Find(tovar.articyl_tovar);
-                        SetData();
-                    }
+                    MessageBox.Show("Вы отредактировали товар!");
                 }
             }
         }

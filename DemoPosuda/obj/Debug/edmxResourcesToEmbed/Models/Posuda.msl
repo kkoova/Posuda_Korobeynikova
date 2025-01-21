@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище KorobeynikovaPosudaModelContainer" CdmEntityContainer="KorobeynikovaPosudaEntities">
+    <EntitySetMapping Name="Clietn">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Clietn">
+        <MappingFragment StoreEntitySet="Clietn">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id__type_client" ColumnName="id_ type_client" />
+          <ScalarProperty Name="name_client" ColumnName="name_client" />
+          <ScalarProperty Name="directort_client" ColumnName="directort_client" />
+          <ScalarProperty Name="email_client" ColumnName="email_client" />
+          <ScalarProperty Name="phone_client" ColumnName="phone_client" />
+          <ScalarProperty Name="index_client" ColumnName="index_client" />
+          <ScalarProperty Name="adress_client" ColumnName="adress_client" />
+          <ScalarProperty Name="inn_client" ColumnName="inn_client" />
+          <ScalarProperty Name="rate_client" ColumnName="rate_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postavchik">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Postavchik">
+        <MappingFragment StoreEntitySet="Postavchik">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_post" ColumnName="name_post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proizvod">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Proizvod">
+        <MappingFragment StoreEntitySet="Proizvod">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_proizvod" ColumnName="name_proizvod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Punkt">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Punkt">
+        <MappingFragment StoreEntitySet="Punkt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="index_punkt" ColumnName="index_punkt" />
+          <ScalarProperty Name="town_punkt" ColumnName="town_punkt" />
+          <ScalarProperty Name="yl_punkt" ColumnName="yl_punkt" />
+          <ScalarProperty Name="dom_punkt" ColumnName="dom_punkt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleSotrudnik">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.RoleSotrudnik">
+        <MappingFragment StoreEntitySet="RoleSotrudnik">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role_sotr" ColumnName="role_sotr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sotrydnik">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Sotrydnik">
+        <MappingFragment StoreEntitySet="Sotrydnik">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_role_sotr" ColumnName="id_role_sotr" />
+          <ScalarProperty Name="fio_sotr" ColumnName="fio_sotr" />
+          <ScalarProperty Name="login_sotr" ColumnName="login_sotr" />
+          <ScalarProperty Name="pass_sotr" ColumnName="pass_sotr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_state" ColumnName="name_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tovar">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Tovar">
+        <MappingFragment StoreEntitySet="Tovar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="articyl_tovar" ColumnName="articyl_tovar" />
+          <ScalarProperty Name="id_name_tovar" ColumnName="id_name_tovar" />
+          <ScalarProperty Name="ediz_tovar" ColumnName="ediz_tovar" />
+          <ScalarProperty Name="cost_tovar" ColumnName="cost_tovar" />
+          <ScalarProperty Name="max_sale_tovar" ColumnName="max_sale_tovar" />
+          <ScalarProperty Name="id_proizvod_tovar" ColumnName="id_proizvod_tovar" />
+          <ScalarProperty Name="id_poctavchik_tovar" ColumnName="id_poctavchik_tovar" />
+          <ScalarProperty Name="id_kategiry_tovar" ColumnName="id_kategiry_tovar" />
+          <ScalarProperty Name="curent_sale_tovar" ColumnName="curent_sale_tovar" />
+          <ScalarProperty Name="kolvo_tovar" ColumnName="kolvo_tovar" />
+          <ScalarProperty Name="deck_tovar" ColumnName="deck_tovar" />
+          <ScalarProperty Name="image_tovar" ColumnName="image_tovar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TovarCategory">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.TovarCategory">
+        <MappingFragment StoreEntitySet="TovarCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kategory_tovar" ColumnName="kategory_tovar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TovarName">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.TovarName">
+        <MappingFragment StoreEntitySet="TovarName">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_tovar" ColumnName="name_tovar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeClient">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.TypeClient">
+        <MappingFragment StoreEntitySet="TypeClient">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type_client" ColumnName="type_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakaz">
+      <EntityTypeMapping TypeName="KorobeynikovaPosudaModel.Zakaz">
+        <MappingFragment StoreEntitySet="Zakaz">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_artic_zakaz" ColumnName="id_artic_zakaz" />
+          <ScalarProperty Name="kolvo_tovar_in_zakaz" ColumnName="kolvo_tovar_in_zakaz" />
+          <ScalarProperty Name="data_zakaz" ColumnName="data_zakaz" />
+          <ScalarProperty Name="data_dostav_zakaz" ColumnName="data_dostav_zakaz" />
+          <ScalarProperty Name="id_punkt_zakaz" ColumnName="id_punkt_zakaz" />
+          <ScalarProperty Name="id_name_client" ColumnName="id_name_client" />
+          <ScalarProperty Name="kod_zakaz" ColumnName="kod_zakaz" />
+          <ScalarProperty Name="id_state_zakaz" ColumnName="id_state_zakaz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

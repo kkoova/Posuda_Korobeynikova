@@ -15,7 +15,7 @@ namespace DemoPosuda.Models
     public partial class Zakaz
     {
         public int id { get; set; }
-        public string id_artic_zakaz { get; set; }
+        public Nullable<int> id_artic_zakaz { get; set; }
         public Nullable<double> kolvo_tovar_in_zakaz { get; set; }
         public Nullable<System.DateTime> data_zakaz { get; set; }
         public Nullable<System.DateTime> data_dostav_zakaz { get; set; }

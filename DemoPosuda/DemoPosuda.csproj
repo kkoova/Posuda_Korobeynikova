@@ -64,6 +64,24 @@
     <Compile Include="CustomContrrols\UserControlTovar.Designer.cs">
       <DependentUpon>UserControlTovar.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\AddTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AddTovar.Designer.cs">
+      <DependentUpon>AddTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\SingIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\SingIn.Designer.cs">
+      <DependentUpon>SingIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Clietn.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
@@ -115,24 +133,6 @@
     <Compile Include="Models\Zakaz.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppForms\AddTovar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppForms\AddTovar.Designer.cs">
-      <DependentUpon>AddTovar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppForms\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppForms\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppForms\SingIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppForms\SingIn.Designer.cs">
-      <DependentUpon>SingIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomContrrols\UserControlTovar.resx">
@@ -179,21 +179,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.ico" />
     <Content Include="Models\Posuda.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Posuda.Context.cs</LastGenOutput>
       <DependentUpon>Posuda.edmx</DependentUpon>
+      <LastGenOutput>Posuda.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Posuda.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Posuda.edmx</DependentUpon>
       <LastGenOutput>Posuda.cs</LastGenOutput>
     </Content>
-    <Content Include="icon.ico" />
     <None Include="Resources\picture.png" />
     <None Include="Resources\logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Docks\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

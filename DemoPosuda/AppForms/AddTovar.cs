@@ -1,13 +1,7 @@
-﻿using DemoPosuda.Data;
+﻿using DemoPosuda.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DemoPosuda.Forms
@@ -32,6 +26,7 @@ namespace DemoPosuda.Forms
                 var name = context.TovarName.ToList();
                 var categoty = context.TovarCategory.ToList();
                 var post = context.Postavchik.ToList();
+                var proizv = context.Proizvod.ToList();
 
                 comboBoxName.DataSource = name;
                 comboBoxName.DisplayMember = "name_tovar";
@@ -44,6 +39,10 @@ namespace DemoPosuda.Forms
                 comboBoxPostavchik.DataSource = post;
                 comboBoxPostavchik.DisplayMember = "name_post";
                 comboBoxPostavchik.ValueMember = "id";
+
+                comboBoxProizvod.DataSource = proizv;
+                comboBoxProizvod.DisplayMember = "name_proizvod";
+                comboBoxProizvod.ValueMember = "id";
             }
         }
 
@@ -60,6 +59,7 @@ namespace DemoPosuda.Forms
             textBoxCost.Text = tovar.cost_tovar.ToString();
             textBoxDeck.Text = tovar.deck_tovar;
             buttonImage.Text = tovar.image_tovar;
+            comboBoxProizvod.SelectedValue = tovar.id_proizvod_tovar;
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -88,6 +88,7 @@ namespace DemoPosuda.Forms
             var cost = Convert.ToDouble(textBoxCost.Text);
             var deck = textBoxDeck.Text;
             var image = buttonImage.Text;
+            var proizv = Convert.ToInt16(comboBoxProizvod.SelectedValue);
 
             using (var context = new KorobeynikovaPosudaEntities())
             {
@@ -103,6 +104,7 @@ namespace DemoPosuda.Forms
                         kolvo_tovar = kolVo,
                         deck_tovar = deck,
                         image_tovar = image,
+                        id_proizvod_tovar = proizv,
                     };
 
                     context.Tovar.Add(newTovar);
@@ -119,11 +121,12 @@ namespace DemoPosuda.Forms
                     upTovar.kolvo_tovar = kolVo;
                     upTovar.deck_tovar = deck;
                     upTovar.image_tovar = image;
+                    upTovar.id_proizvod_tovar = proizv;
                 }
 
                 context.SaveChanges();
             }
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
         }
 
         private void buttonImage_Click(object sender, EventArgs e)
@@ -132,9 +135,9 @@ namespace DemoPosuda.Forms
             {
                 string selectImage = openFileDialogImage.FileName;
 
-                buttonImage.Text = $"{selectImage}.jpg";
+                buttonImage.Text = $"{Path.GetFileName(selectImage)}";
 
-                string projectPath = Path.GetDirectoryName(Application.ExecutablePath);
+                string projectPath = Path.GetDirectoryName(AppContext.BaseDirectory);
 
                 string imagesFolder = Path.Combine(projectPath, "TovarImage");
 

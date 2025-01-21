@@ -20,6 +20,7 @@ namespace DemoPosuda.Models
             this.Zakaz = new HashSet<Zakaz>();
         }
     
+        public int id { get; set; }
         public string articyl_tovar { get; set; }
         public Nullable<int> id_name_tovar { get; set; }
         public string ediz_tovar { get; set; }

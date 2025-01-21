@@ -1,8 +1,8 @@
 ﻿using DemoPosuda.Contrrols;
-using DemoPosuda.Data;
+using DemoPosuda.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace DemoPosuda.Forms
@@ -10,7 +10,7 @@ namespace DemoPosuda.Forms
     public partial class Main : Form
     {
         public Sotrydnik user;
-        public string userRole;
+        public int userRole;
         public List<Tovar> tovarList;
         public Main(Sotrydnik user = null)
         {
@@ -18,26 +18,27 @@ namespace DemoPosuda.Forms
 
             this.user = user;
 
-            if (user != null)
-            {
-                AddUserLogin();
-            }
-            else
-            {
-                userRole = "Гость";
-            }
+            AddUserLogin();
 
             ComboboxProizv();
         }
 
-        public void AddUserLogin()
+        private void AddUserLogin()
         {
-            userRole = user.RoleSotrudnik.role_sotr;
+            if (user != null)
+            {
+                userRole = Convert.ToInt16(user.id_role_sotr);
 
-            labelUserFio.Text = user.fio_sotr;
+                labelUserFio.Text = user.fio_sotr;
 
-            if (userRole == "Администратор")
-                AddТоварToolStripMenuItem.Visible = true;
+                if (userRole == 1)
+                    AddТоварToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                AddТоварToolStripMenuItem.Visible = false;
+                labelUserFio.Text = "Гость";
+            }
         }
 
         public void Stats()
@@ -73,7 +74,16 @@ namespace DemoPosuda.Forms
 
         private void ExitToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            using (var sing = new SingIn())
+            {
+                if (sing.ShowDialog() == DialogResult.OK)
+                {
+                    var user = sing.ReturnedValue;
+                    this.user = user;
+                }
+            }
+
+            AddUserLogin();
         }
 
         private void textBoxFindName_TextChanged(object sender, System.EventArgs e)
