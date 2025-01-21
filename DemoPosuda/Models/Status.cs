@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoPosuda.Data
+namespace DemoPosuda.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeClient
+    public partial class Status
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeClient()
+        public Status()
         {
-            this.Clietn = new HashSet<Clietn>();
+            this.Zakaz = new HashSet<Zakaz>();
         }
     
         public int id { get; set; }
-        public string type_client { get; set; }
+        public string name_state { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Clietn> Clietn { get; set; }
+        public virtual ICollection<Zakaz> Zakaz { get; set; }
     }
 }

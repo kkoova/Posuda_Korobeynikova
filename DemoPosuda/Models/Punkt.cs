@@ -7,36 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoPosuda.Data
+namespace DemoPosuda.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Tovar
+    public partial class Punkt
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tovar()
+        public Punkt()
         {
             this.Zakaz = new HashSet<Zakaz>();
         }
     
-        public string articyl_tovar { get; set; }
-        public Nullable<int> id_name_tovar { get; set; }
-        public string ediz_tovar { get; set; }
-        public Nullable<double> cost_tovar { get; set; }
-        public Nullable<double> max_sale_tovar { get; set; }
-        public Nullable<int> id_proizvod_tovar { get; set; }
-        public Nullable<int> id_poctavchik_tovar { get; set; }
-        public Nullable<int> id_kategiry_tovar { get; set; }
-        public Nullable<double> curent_sale_tovar { get; set; }
-        public Nullable<double> kolvo_tovar { get; set; }
-        public string deck_tovar { get; set; }
-        public string image_tovar { get; set; }
+        public int id { get; set; }
+        public Nullable<double> index_punkt { get; set; }
+        public string town_punkt { get; set; }
+        public string yl_punkt { get; set; }
+        public Nullable<double> dom_punkt { get; set; }
     
-        public virtual Postavchik Postavchik { get; set; }
-        public virtual Proizvod Proizvod { get; set; }
-        public virtual TovarCategory TovarCategory { get; set; }
-        public virtual TovarName TovarName { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zakaz> Zakaz { get; set; }
     }

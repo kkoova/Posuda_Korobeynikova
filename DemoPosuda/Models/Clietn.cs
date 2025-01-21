@@ -7,23 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoPosuda.Data
+namespace DemoPosuda.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TovarName
+    public partial class Clietn
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TovarName()
+        public Clietn()
         {
-            this.Tovar = new HashSet<Tovar>();
+            this.Zakaz = new HashSet<Zakaz>();
         }
     
         public int id { get; set; }
-        public string name_tovar { get; set; }
+        public Nullable<int> id__type_client { get; set; }
+        public string name_client { get; set; }
+        public string directort_client { get; set; }
+        public string email_client { get; set; }
+        public string phone_client { get; set; }
+        public Nullable<double> index_client { get; set; }
+        public string adress_client { get; set; }
+        public Nullable<double> inn_client { get; set; }
+        public Nullable<double> rate_client { get; set; }
     
+        public virtual TypeClient TypeClient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tovar> Tovar { get; set; }
+        public virtual ICollection<Zakaz> Zakaz { get; set; }
     }
 }

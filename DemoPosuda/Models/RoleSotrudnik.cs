@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoPosuda.Data
+namespace DemoPosuda.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TovarCategory
+    public partial class RoleSotrudnik
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TovarCategory()
+        public RoleSotrudnik()
         {
-            this.Tovar = new HashSet<Tovar>();
+            this.Sotrydnik = new HashSet<Sotrydnik>();
         }
     
         public int id { get; set; }
-        public string kategory_tovar { get; set; }
+        public string role_sotr { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tovar> Tovar { get; set; }
+        public virtual ICollection<Sotrydnik> Sotrydnik { get; set; }
     }
 }

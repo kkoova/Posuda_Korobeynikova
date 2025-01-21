@@ -58,93 +58,93 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contrrols\UserControlTovar.cs">
+    <Compile Include="CustomContrrols\UserControlTovar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Contrrols\UserControlTovar.Designer.cs">
+    <Compile Include="CustomContrrols\UserControlTovar.Designer.cs">
       <DependentUpon>UserControlTovar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\Clietn.cs">
+    <Compile Include="Models\Clietn.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Postavchik.cs">
+    <Compile Include="Models\Postavchik.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Posuda.Context.cs">
+    <Compile Include="Models\Posuda.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Posuda.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Posuda.cs">
+    <Compile Include="Models\Posuda.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Posuda.Designer.cs">
+    <Compile Include="Models\Posuda.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Posuda.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Data\Proizvod.cs">
+    <Compile Include="Models\Proizvod.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Punkt.cs">
+    <Compile Include="Models\Punkt.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\RoleSotrudnik.cs">
+    <Compile Include="Models\RoleSotrudnik.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Sotrydnik.cs">
+    <Compile Include="Models\Sotrydnik.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Status.cs">
+    <Compile Include="Models\Status.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Tovar.cs">
+    <Compile Include="Models\Tovar.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\TovarCategory.cs">
+    <Compile Include="Models\TovarCategory.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\TovarName.cs">
+    <Compile Include="Models\TovarName.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\TypeClient.cs">
+    <Compile Include="Models\TypeClient.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Zakaz.cs">
+    <Compile Include="Models\Zakaz.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddTovar.cs">
+    <Compile Include="AppForms\AddTovar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddTovar.Designer.cs">
+    <Compile Include="AppForms\AddTovar.Designer.cs">
       <DependentUpon>AddTovar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main.cs">
+    <Compile Include="AppForms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main.Designer.cs">
+    <Compile Include="AppForms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SingIn.cs">
+    <Compile Include="AppForms\SingIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SingIn.Designer.cs">
+    <Compile Include="AppForms\SingIn.Designer.cs">
       <DependentUpon>SingIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Contrrols\UserControlTovar.resx">
+    <EmbeddedResource Include="CustomContrrols\UserControlTovar.resx">
       <DependentUpon>UserControlTovar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddTovar.resx">
+    <EmbeddedResource Include="AppForms\AddTovar.resx">
       <DependentUpon>AddTovar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main.resx">
+    <EmbeddedResource Include="AppForms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SingIn.resx">
+    <EmbeddedResource Include="AppForms\SingIn.resx">
       <DependentUpon>SingIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,11 +157,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Data\Posuda.edmx">
+    <EntityDeploy Include="Models\Posuda.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Posuda.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\Posuda.edmx.diagram">
+    <None Include="Models\Posuda.edmx.diagram">
       <DependentUpon>Posuda.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -179,12 +179,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Posuda.Context.tt">
+    <Content Include="Models\Posuda.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Posuda.Context.cs</LastGenOutput>
       <DependentUpon>Posuda.edmx</DependentUpon>
     </Content>
-    <Content Include="Data\Posuda.tt">
+    <Content Include="Models\Posuda.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Posuda.edmx</DependentUpon>
       <LastGenOutput>Posuda.cs</LastGenOutput>
