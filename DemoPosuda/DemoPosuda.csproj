@@ -88,6 +88,7 @@
     <Compile Include="AppForms\SingIn.Designer.cs">
       <DependentUpon>SingIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logick\SaleRachet.cs" />
     <Compile Include="Models\Clietn.cs">
       <DependentUpon>Posuda.tt</DependentUpon>
     </Compile>

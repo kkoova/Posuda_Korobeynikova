@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewHistory = new System.Windows.Forms.DataGridView();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
+            this.buttonSaleChet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).BeginInit();
@@ -104,21 +105,33 @@
             this.comboBoxClient.FormattingEnabled = true;
             this.comboBoxClient.Location = new System.Drawing.Point(12, 135);
             this.comboBoxClient.Name = "comboBoxClient";
-            this.comboBoxClient.Size = new System.Drawing.Size(748, 31);
+            this.comboBoxClient.Size = new System.Drawing.Size(527, 31);
             this.comboBoxClient.TabIndex = 5;
             this.comboBoxClient.SelectedIndexChanged += new System.EventHandler(this.comboBoxClient_SelectedIndexChanged);
+            // 
+            // buttonSaleChet
+            // 
+            this.buttonSaleChet.Enabled = false;
+            this.buttonSaleChet.Location = new System.Drawing.Point(545, 135);
+            this.buttonSaleChet.Name = "buttonSaleChet";
+            this.buttonSaleChet.Size = new System.Drawing.Size(215, 31);
+            this.buttonSaleChet.TabIndex = 6;
+            this.buttonSaleChet.Text = "Расчитать скидку";
+            this.buttonSaleChet.UseVisualStyleBackColor = true;
+            this.buttonSaleChet.Click += new System.EventHandler(this.buttonSaleChet_Click);
             // 
             // HistoryZakaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 479);
+            this.Controls.Add(this.buttonSaleChet);
             this.Controls.Add(this.comboBoxClient);
             this.Controls.Add(this.dataGridViewHistory);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(789, 518);
             this.Name = "HistoryZakaz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -139,5 +152,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridViewHistory;
         private System.Windows.Forms.ComboBox comboBoxClient;
+        private System.Windows.Forms.Button buttonSaleChet;
     }
 }
