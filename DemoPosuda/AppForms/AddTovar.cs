@@ -6,10 +6,16 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.Forms
 {
+    /// <summary>
+    /// Форма добавление товара <see cref="AddTovar"/>
+    /// </summary>
     public partial class AddTovar : Form
     {
-        private Tovar tovar;
+        private readonly Tovar tovar;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public AddTovar(Tovar tovar = null)
         {
             InitializeComponent();
@@ -19,6 +25,9 @@ namespace DemoPosuda.Forms
             if (tovar != null) UpdateTovar();
         }
 
+        /// <summary>
+        /// Добавление данных для <see cref="ComboBox"/> на форме
+        /// </summary>
         private void Combobox()
         {
             using (var context = new KorobeynikovaPosudaEntities())
@@ -46,6 +55,9 @@ namespace DemoPosuda.Forms
             }
         }
 
+        /// <summary>
+        /// Вставка данных для последующего обновления
+        /// </summary>
         private void UpdateTovar()
         {
             Text = "Обновление товара";
@@ -61,6 +73,10 @@ namespace DemoPosuda.Forms
             buttonImage.Text = tovar.image_tovar;
             comboBoxProizvod.SelectedValue = tovar.id_proizvod_tovar;
         }
+
+        /// <summary>
+        /// Валидация формы для добавления или редактирования товара
+        /// </summary>
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             foreach(var control in this.Controls)
@@ -75,10 +91,13 @@ namespace DemoPosuda.Forms
                 }
             }
 
-            AddTovarNew();
+            AddOrUpdateTovarNew();
         }
 
-        private void AddTovarNew()
+        /// <summary>
+        /// Добавление или редактирование товара
+        /// </summary>
+        private void AddOrUpdateTovarNew()
         {
             var name = Convert.ToInt16(comboBoxName.SelectedValue);
             var kat = Convert.ToInt16(comboBoxCategoty.SelectedValue);
@@ -129,6 +148,9 @@ namespace DemoPosuda.Forms
             DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// Добавление и загрузка изображения
+        /// </summary>
         private void buttonImage_Click(object sender, EventArgs e)
         {
             if (openFileDialogImage.ShowDialog() == DialogResult.OK)
@@ -144,11 +166,13 @@ namespace DemoPosuda.Forms
                 try
                 {
                     File.Copy(selectImage, Path.Combine(imagesFolder, Path.GetFileName(selectImage)), true);
-                    MessageBox.Show("Изоброажение добавленно", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Изоброажение добавленно", "Успех", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка добавления изображения: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Ошибка добавления изображения: {ex.Message}", "Ошибка", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

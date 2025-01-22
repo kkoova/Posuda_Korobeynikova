@@ -50,6 +50,8 @@
             this.AddТоварToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.акаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zakazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shouZakazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -224,7 +226,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.товарыToolStripMenuItem,
-            this.акаунтToolStripMenuItem});
+            this.акаунтToolStripMenuItem,
+            this.zakazToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(850, 24);
@@ -269,6 +272,22 @@
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.ExitToolStripMenuItem.Text = "Выйти";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // zakazToolStripMenuItem
+            // 
+            this.zakazToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shouZakazToolStripMenuItem});
+            this.zakazToolStripMenuItem.Name = "zakazToolStripMenuItem";
+            this.zakazToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.zakazToolStripMenuItem.Text = "Заказы";
+            this.zakazToolStripMenuItem.Visible = false;
+            // 
+            // shouZakazToolStripMenuItem
+            // 
+            this.shouZakazToolStripMenuItem.Name = "shouZakazToolStripMenuItem";
+            this.shouZakazToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shouZakazToolStripMenuItem.Text = "Просмотр";
+            this.shouZakazToolStripMenuItem.Click += new System.EventHandler(this.shouZakazToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -320,5 +339,7 @@
         private System.Windows.Forms.ToolStripMenuItem AddТоварToolStripMenuItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem zakazToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shouZakazToolStripMenuItem;
     }
 }

@@ -7,11 +7,18 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.Forms
 {
+    /// <summary>
+    /// Главная фома приложения <see cref="Main"/>
+    /// </summary>
     public partial class Main : Form
     {
         public Sotrydnik user;
         public int userRole;
         public List<Tovar> tovarList;
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Main(Sotrydnik user = null)
         {
             InitializeComponent();
@@ -23,6 +30,9 @@ namespace DemoPosuda.Forms
             ComboboxProizv();
         }
 
+        /// <summary>
+        /// Определение роли ползователя
+        /// </summary>
         private void AddUserLogin()
         {
             if (user != null)
@@ -41,6 +51,9 @@ namespace DemoPosuda.Forms
             }
         }
 
+        /// <summary>
+        /// Вывод статистики
+        /// </summary>
         public void Stats()
         {
             using (var context = new KorobeynikovaPosudaEntities())
@@ -51,6 +64,9 @@ namespace DemoPosuda.Forms
             }
         }
 
+        /// <summary>
+        /// Заполнение <see cref="ComboboxProizv"/>
+        /// </summary>
         public void ComboboxProizv()
         {
             comboBoxProizvod.SelectedIndex = -1;
@@ -67,11 +83,17 @@ namespace DemoPosuda.Forms
             }
         }
 
+        /// <summary>
+        /// Показ списка товаров
+        /// </summary>
         private void ShowToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             ShowTovar();
         }
 
+        /// <summary>
+        /// Выход из аккаунта пользователя
+        /// </summary>
         private void ExitToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             using (var sing = new SingIn())
@@ -86,27 +108,42 @@ namespace DemoPosuda.Forms
             AddUserLogin();
         }
 
+        /// <summary>
+        /// Применение фильтра
+        /// </summary>
         private void textBoxFindName_TextChanged(object sender, System.EventArgs e)
         {
             var text = textBoxFindName.Text;
             ApplyFilters(text);
         }
 
+        /// <summary>
+        /// Применение фильтра
+        /// </summary>
         private void ShowTovar()
         {
             ApplyFilters();
         }
 
+        /// <summary>
+        /// Применение фильтра
+        /// </summary>
         private void radioButtonUp_CheckedChanged(object sender, System.EventArgs e)
         {
             ApplyFilters();
         }
 
+        /// <summary>
+        /// Применение фильтра
+        /// </summary>
         private void radioButtonDown_CheckedChanged(object sender, System.EventArgs e)
         {
             ApplyFilters();
         }
 
+        /// <summary>
+        /// Поиск товаров с фильтрацией
+        /// </summary>
         private void ApplyFilters(string findText = null)
         {
             using (var context = new KorobeynikovaPosudaEntities())
@@ -145,11 +182,17 @@ namespace DemoPosuda.Forms
             }
         }
 
+        /// <summary>
+        /// Применение фильтра
+        /// </summary>
         private void comboBoxProizvod_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             ApplyFilters();
         }
 
+        /// <summary>
+        /// Вывод списка товараов в виде <see cref="UserControlTovar"/>
+        /// </summary>
         public void FlowShow()
         {
             flowLayoutPanelTovar.Controls.Clear();
@@ -164,6 +207,9 @@ namespace DemoPosuda.Forms
             Stats();
         }
 
+        /// <summary>
+        /// Обработка добавлении товара с формы <see cref="AddTovar"/>
+        /// </summary>
         private void AddТоварToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             using (var addTovar = new AddTovar())
@@ -173,6 +219,13 @@ namespace DemoPosuda.Forms
                     MessageBox.Show("Вы успешшно добавили товар", "Успех");
                 }
             }
+
+            ShowTovar();
+        }
+
+        private void shouZakazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

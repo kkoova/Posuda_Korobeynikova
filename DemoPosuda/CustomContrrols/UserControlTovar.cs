@@ -1,16 +1,22 @@
 ﻿using DemoPosuda.Forms;
 using DemoPosuda.Models;
 using System;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace DemoPosuda.Contrrols
 {
+    /// <summary>
+    /// <see cref="UserControl"/> товара
+    /// </summary>
     public partial class UserControlTovar : UserControl
     {
         private Tovar tovar { get; set; }
         private int role;
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public UserControlTovar(Tovar tovar = null, int role = 4)
         {
             InitializeComponent();
@@ -24,6 +30,9 @@ namespace DemoPosuda.Contrrols
                 buttonDellTovar.Enabled = true;
         }
 
+        /// <summary>
+        /// Установка значения по всему <see cref="UserControlTovar"/>
+        /// </summary>
         private void SetData()
         {
             var costSale = tovar.cost_tovar * (tovar.curent_sale_tovar / 100);
@@ -55,6 +64,9 @@ namespace DemoPosuda.Contrrols
             }
         }
 
+        /// <summary>
+        /// Попытка редакирования товара на форме <see cref="AddTovar"/>
+        /// </summary>
         private void UserControlTovar_Click(object sender, EventArgs e)
         {
             if (role != 1) return;

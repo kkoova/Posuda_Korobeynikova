@@ -5,15 +5,24 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.Forms
 {
+    /// <summary>
+    /// Форма автоизации пользователя <see cref="SingIn"/>
+    /// </summary>
     public partial class SingIn : Form
     {
         public Sotrydnik ReturnedValue { get; set; }
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public SingIn()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Валидация и попытка входа пользователя
+        /// </summary>
         private void buttonGo_Click(object sender, EventArgs e)
         {
             var login = textBoxLogin.Text;
@@ -45,6 +54,9 @@ namespace DemoPosuda.Forms
             DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// Отмена дейтсвия
+        /// </summary>
         private void buttonGoNoSign_Click(object sender, EventArgs e)
         {
             ReturnedValue = null;
