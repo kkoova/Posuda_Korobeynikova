@@ -1,4 +1,5 @@
-﻿using DemoPosuda.Contrrols;
+﻿using DemoPosuda.AppForms;
+using DemoPosuda.Contrrols;
 using DemoPosuda.Models;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,16 @@ namespace DemoPosuda.Forms
                 labelUserFio.Text = user.fio_sotr;
 
                 if (userRole == 1)
+                {
                     AddТоварToolStripMenuItem.Visible = true;
+                    zakazToolStripMenuItem.Visible = true;
+                }
+                else if (userRole == 2) 
+                {
+                    AddТоварToolStripMenuItem.Visible = false;
+                    zakazToolStripMenuItem.Visible = true;
+                }
+
             }
             else
             {
@@ -225,7 +235,8 @@ namespace DemoPosuda.Forms
 
         private void shouZakazToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var history = new HistoryZakaz();
+            history.ShowDialog();
         }
     }
 }

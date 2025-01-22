@@ -18,3 +18,4 @@ D:\C#\Demo\21.01.25\DemoPosuda\bin\Debug\ru\EntityFramework.SqlServer.resources.
 D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.csproj.Up2Date
 D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.exe
 D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.pdb
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.AppForms.HistoryZakaz.resources

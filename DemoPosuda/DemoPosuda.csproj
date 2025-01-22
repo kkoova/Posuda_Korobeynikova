@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\HistoryZakaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HistoryZakaz.Designer.cs">
+      <DependentUpon>HistoryZakaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomContrrols\UserControlTovar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\HistoryZakaz.resx">
+      <DependentUpon>HistoryZakaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomContrrols\UserControlTovar.resx">
       <DependentUpon>UserControlTovar.cs</DependentUpon>
     </EmbeddedResource>
