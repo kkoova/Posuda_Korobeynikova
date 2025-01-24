@@ -1,0 +1,6 @@
+C:\Users\1101-22\Desktop\Posuda\SF2022User1101-22Lib.dll\bin\Debug\SF2022User1101-22Lib.dll.dll
+C:\Users\1101-22\Desktop\Posuda\SF2022User1101-22Lib.dll\bin\Debug\SF2022User1101-22Lib.dll.pdb
+C:\Users\1101-22\Desktop\Posuda\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.csproj.AssemblyReference.cache
+C:\Users\1101-22\Desktop\Posuda\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.csproj.CoreCompileInputs.cache
+C:\Users\1101-22\Desktop\Posuda\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.dll
+C:\Users\1101-22\Desktop\Posuda\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.pdb
