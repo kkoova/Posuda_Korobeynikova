@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPosuda", "DemoPosuda\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF2022User1101-22Lib.dll", "SF2022User1101-22Lib.dll\SF2022User1101-22Lib.dll.csproj", "{F8781772-DA94-4A64-AD06-655B7C7D2DBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF2022User1101-22Lib.dllTests", "SF2022User1101-22Lib.dllTests\SF2022User1101-22Lib.dllTests.csproj", "{60AC7228-FE60-43E1-9172-986DE89F0AF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F8781772-DA94-4A64-AD06-655B7C7D2DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8781772-DA94-4A64-AD06-655B7C7D2DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8781772-DA94-4A64-AD06-655B7C7D2DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AC7228-FE60-43E1-9172-986DE89F0AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AC7228-FE60-43E1-9172-986DE89F0AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AC7228-FE60-43E1-9172-986DE89F0AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AC7228-FE60-43E1-9172-986DE89F0AF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
