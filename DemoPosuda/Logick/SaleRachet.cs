@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DemoPosuda.Models;
+using System;
 
 namespace DemoPosuda.Logick
 {
     public class SaleRachet
     {
+        public double SaleSet(Tovar tovar)
+        {
+            var sale = Convert.ToDouble(tovar.cost_tovar * (tovar.curent_sale_tovar / 100));
 
+            return sale;
+        }
     }
 }

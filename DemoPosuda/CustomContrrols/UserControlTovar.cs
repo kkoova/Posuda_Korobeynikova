@@ -1,4 +1,5 @@
 ﻿using DemoPosuda.Forms;
+using DemoPosuda.Logick;
 using DemoPosuda.Models;
 using System;
 using System.Drawing;
@@ -35,7 +36,9 @@ namespace DemoPosuda.Contrrols
         /// </summary>
         private void SetData()
         {
-            var costSale = tovar.cost_tovar * (tovar.curent_sale_tovar / 100);
+            var sale = new SaleRachet();
+
+            var costSale = sale.SaleSet(tovar);
 
             labelNameTovar.Text = tovar.TovarName.name_tovar;
             labelPriseTovar.Text = costSale.ToString();
