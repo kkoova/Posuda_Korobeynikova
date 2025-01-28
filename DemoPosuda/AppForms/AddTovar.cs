@@ -106,7 +106,8 @@ namespace DemoPosuda.Forms
             var postav = Convert.ToInt16(comboBoxPostavchik.SelectedValue);
             var cost = Convert.ToDouble(textBoxCost.Text);
             var deck = textBoxDeck.Text;
-            var image = buttonImage.Text;
+            var image = string.Empty;
+            if (buttonImage.Text != "Добавить изображение") { image = buttonImage.Text; }
             var proizv = Convert.ToInt16(comboBoxProizvod.SelectedValue);
 
             using (var context = new KorobeynikovaPosudaEntities())

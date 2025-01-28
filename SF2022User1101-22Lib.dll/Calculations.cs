@@ -14,24 +14,17 @@ namespace SF2022User1101_22Lib.dll
             var booll = false;
             var i = 0;
 
-            Console.Write("Введите E для окончания ввода");
-            Console.Write("startTime | duration");
+            Console.WriteLine(vvod);
 
-            while (booll == false)
-            {
-                if (vvod == "E") booll = true;
-                Console.WriteLine(vvod);
+            if (vvod.Length < 8) return null;
+            string[] parts = vvod.Split(' ');
 
-                if (vvod.Length < 8) return null;
-                string[] parts = vvod.Split(' ');
+            startTimes[i] = TimeSpan.Parse(parts[0]);
+            durations[i] = Int16.Parse(parts[1]);
 
-                startTimes[i] = TimeSpan.Parse(parts[0]);
-                durations[i] = Int16.Parse(parts[1]);
-
-                i++;
-            }
-
-            return "";
+            i++;
+            
+            return 
         }
     }
 }
