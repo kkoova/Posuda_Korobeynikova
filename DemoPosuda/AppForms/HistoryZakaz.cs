@@ -1,4 +1,5 @@
-﻿using DemoPosuda.Models;
+﻿using DemoPosuda.Logick;
+using DemoPosuda.Models;
 using System;
 using System.Data;
 using System.Linq;
@@ -107,22 +108,11 @@ namespace DemoPosuda.AppForms
         /// </summary>
         private void buttonSaleChet_Click(object sender, EventArgs e)
         {
-            using (var context = new KorobeynikovaPosudaEntities())
-            {
-                var colvo = context.Zakaz
-                    .Where(p => p.Clietn.directort_client == client)
-                    .Select(p => p.Tovar.cost_tovar * p.kolvo_tovar_in_zakaz)
-                    .Sum();
+            var saleRas = new SaleRachetZakazchik();
 
-                var sale = 0;
+            var result = saleRas.SaleRachet(client);
 
-                if (colvo < 50000) sale = 0;
-                else if (colvo < 100000) sale = 1;
-                else if (colvo < 300000) sale = 3;
-                else if (colvo > 300000) sale = 5;
-
-                MessageBox.Show($"Скидка для текущего Заказчика равна {sale} %");
-            }
+            MessageBox.Show($"Скидка для текущего Заказчика равна {result} %");
         }
     }
 }

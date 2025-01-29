@@ -1,9 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Linq;
 
 namespace SF2022User1101_22Lib.dll.Tests
 {
+    /// <summary>
+    /// Тесты для библиотеки <see cref="Calculations"/>
+    /// </summary>
     [TestClass()]
     public class CalculationsTests
     {
@@ -255,6 +257,9 @@ namespace SF2022User1101_22Lib.dll.Tests
             CollectionAssert.AreEqual(expectedOutput, result);
         }
 
+        /// <summary>
+        /// Приравнивание значения к правильной форме
+        /// </summary>
         public string[] SetDataTrue(string startTimesAndDurations,
             string beginWorkingTimeAndEndWorkingTime, int consultationTime)
         {

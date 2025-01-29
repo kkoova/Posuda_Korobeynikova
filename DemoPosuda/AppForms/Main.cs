@@ -233,6 +233,9 @@ namespace DemoPosuda.Forms
             ShowTovar();
         }
 
+        /// <summary>
+        /// Открытие формы истории заказа
+        /// </summary>
         private void shouZakazToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var history = new HistoryZakaz();

@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace SF2022User1101_22Lib.dll
 {
+    /// <summary>
+    /// Библиотека для расчета графика работников
+    /// </summary>
     public class Calculations
     {
+        /// <summary>
+        /// Расчет и возврат графика рабоников с перерывами в виде массива
+        /// </summary>
         public string[] AvailablePeriods(TimeSpan[] startTimes,
             int[] durations,
             TimeSpan beginWorkingTime,
