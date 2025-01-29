@@ -6,74 +6,59 @@ namespace SF2022User1101_22Lib.dll
 {
     public class Calculations
     {
-        public string[] SetDataTrue(string startTimesAndDurations, 
-            string beginWorkingTimeAndEndWorkingTime, int consultationTime)
-        {
-            TimeSpan[] startTimes = new TimeSpan[24];
-            int[] durations = new int[24];
-            TimeSpan beginWorkingTime = new TimeSpan();
-            TimeSpan endWorkingTime = new TimeSpan();
-
-            string[] vvod = startTimesAndDurations.Split(',');
-            for(int i = 0; i < vvod.Length; i++)
-            {
-                string[] parts = vvod[i].Split(' ');
-
-                durations[i] = Int16.Parse(parts[1]);
-                startTimes[i] = TimeSpan.Parse(parts[0]);
-            }
-
-            string[] vvodTime = beginWorkingTimeAndEndWorkingTime.Split('-');
-            beginWorkingTime = TimeSpan.Parse(vvodTime[0]);
-            endWorkingTime = TimeSpan.Parse(vvodTime[1]);
-
-            var result = AvailablePeriods(startTimes, durations, beginWorkingTime, endWorkingTime, consultationTime);
-
-            return result;
-        }
-        private string[] AvailablePeriods(TimeSpan[] startTimes,
+        public string[] AvailablePeriods(TimeSpan[] startTimes,
             int[] durations,
             TimeSpan beginWorkingTime,
             TimeSpan endWorkingTime,
             int consultationTime)
         {
-            List<string> availableIntervals = new List<string>();
+            List<TimeSpan> busyStartTimes = new List<TimeSpan>();
+            List<TimeSpan> busyEndTimes = new List<TimeSpan>();
 
-            var sortedOccupiedIntervals = startTimes.Select((startTime, index) => new { StartTime = startTime, Duration = durations[index], Index = index })
-                                                  .OrderBy(x => x.StartTime).ToList();
+            TimeSpan workingStartTime = beginWorkingTime;
+            TimeSpan workingEndTime = endWorkingTime;
 
-            TimeSpan lastEndTime = TimeSpan.Zero;
-            bool isFirstInterval = true;
-
-            foreach (var occupiedInterval in sortedOccupiedIntervals)
+            for (int i = 0; i < startTimes.Length; i++)
             {
-                TimeSpan intervalStart = occupiedInterval.StartTime;
-                TimeSpan intervalDuration = TimeSpan.FromMinutes(occupiedInterval.Duration);
+                TimeSpan startTime = startTimes[i];
+                TimeSpan duration = TimeSpan.FromMinutes(durations[i]);
 
-                if (!isFirstInterval && lastEndTime < intervalStart)
+                busyStartTimes.Add(startTime);
+                busyEndTimes.Add(startTime + duration);
+            }
+
+            List<string> freeIntervals = new List<string>();
+
+            TimeSpan currentTime = workingStartTime;
+            while (currentTime + TimeSpan.FromMinutes(consultationTime) <= workingEndTime)
+            {
+                bool isFree = true;
+                for (int i = 0; i < busyStartTimes.Count; i++)
                 {
-                    TimeSpan availableTime = intervalStart - lastEndTime;
-                    AddAvailableInterval(availableIntervals, availableTime);
+                    if (!(currentTime >= busyEndTimes[i] || currentTime + TimeSpan.FromMinutes(consultationTime) <= busyStartTimes[i]))
+                    {
+                        isFree = false;
+                        break;
+                    }
                 }
 
-                lastEndTime = intervalStart + intervalDuration;
+                if (isFree)
+                {
+                    freeIntervals.Add($"{currentTime.ToString(@"hh\:mm")}-{(currentTime + TimeSpan.FromMinutes(consultationTime)).ToString(@"hh\:mm")}");
+                    currentTime += TimeSpan.FromMinutes(consultationTime);
+                }
+                else
+                {
+                    currentTime += TimeSpan.FromMinutes(consultationTime);
+                }
 
-                isFirstInterval = false;
+                if (currentTime > workingEndTime)
+                {
+                    break;
+                }
             }
 
-            if (lastEndTime < endWorkingTime)
-            {
-                TimeSpan remainingTime = endWorkingTime - lastEndTime;
-                AddAvailableInterval(availableIntervals, remainingTime);
-            }
-
-            return availableIntervals.ToArray();
-        }
-
-        private static void AddAvailableInterval(List<string> availableIntervals, TimeSpan availableTime)
-        {
-            string formattedTime = availableTime.ToString(@"hh\:mm");
-            availableIntervals.Add(formattedTime);
+            return freeIntervals.ToArray();
         }
     }
 }

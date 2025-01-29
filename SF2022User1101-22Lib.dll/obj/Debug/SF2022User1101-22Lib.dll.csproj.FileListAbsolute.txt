@@ -10,3 +10,9 @@ C:\Users\Korobeynikova\Source\Repos\Posuda_Korobeynikova\SF2022User1101-22Lib.dl
 C:\Users\Korobeynikova\Source\Repos\Posuda_Korobeynikova\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.csproj.CoreCompileInputs.cache
 C:\Users\Korobeynikova\Source\Repos\Posuda_Korobeynikova\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.dll
 C:\Users\Korobeynikova\Source\Repos\Posuda_Korobeynikova\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.pdb
+D:\C#\Demo\21.01.25\SF2022User1101-22Lib.dll\bin\Debug\SF2022User1101-22Lib.dll.dll
+D:\C#\Demo\21.01.25\SF2022User1101-22Lib.dll\bin\Debug\SF2022User1101-22Lib.dll.pdb
+D:\C#\Demo\21.01.25\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.csproj.AssemblyReference.cache
+D:\C#\Demo\21.01.25\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.csproj.CoreCompileInputs.cache
+D:\C#\Demo\21.01.25\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.dll
+D:\C#\Demo\21.01.25\SF2022User1101-22Lib.dll\obj\Debug\SF2022User1101-22Lib.dll.pdb
