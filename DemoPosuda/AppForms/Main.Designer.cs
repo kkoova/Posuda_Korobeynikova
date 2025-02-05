@@ -121,6 +121,9 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.labelStats);
@@ -285,7 +288,7 @@
             // shouZakazToolStripMenuItem
             // 
             this.shouZakazToolStripMenuItem.Name = "shouZakazToolStripMenuItem";
-            this.shouZakazToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shouZakazToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.shouZakazToolStripMenuItem.Text = "Просмотр";
             this.shouZakazToolStripMenuItem.Click += new System.EventHandler(this.shouZakazToolStripMenuItem_Click);
             // 

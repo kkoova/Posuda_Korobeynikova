@@ -40,7 +40,7 @@ namespace DemoPosuda.Forms
             {
                 userRole = Convert.ToInt16(user.id_role_sotr);
 
-                labelUserFio.Text = user.fio_sotr;
+                labelUserFio.Text = user.fio_sotr + user.RoleSotrudnik.role_sotr;
 
                 if (userRole == 1)
                 {

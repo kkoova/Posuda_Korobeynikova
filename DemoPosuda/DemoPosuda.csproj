@@ -88,6 +88,12 @@
     <Compile Include="AppForms\SingIn.Designer.cs">
       <DependentUpon>SingIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomContrrols\ZakazControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomContrrols\ZakazControl.Designer.cs">
+      <DependentUpon>ZakazControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logick\SaleRachet.cs" />
     <Compile Include="Logick\SaleRachetZakazchik.cs" />
     <Compile Include="Models\Clietn.cs">
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\SingIn.resx">
       <DependentUpon>SingIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomContrrols\ZakazControl.resx">
+      <DependentUpon>ZakazControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
