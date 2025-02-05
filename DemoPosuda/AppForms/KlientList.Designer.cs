@@ -1,6 +1,6 @@
 ﻿namespace DemoPosuda.AppForms
 {
-    partial class HistoryZakaz
+    partial class KlientList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryZakaz));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KlientList));
+            this.flowLayoutPanelKlient = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttoRegKlirnt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelZazaz = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // flowLayoutPanelKlient
+            // 
+            this.flowLayoutPanelKlient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelKlient.AutoScroll = true;
+            this.flowLayoutPanelKlient.Location = new System.Drawing.Point(13, 146);
+            this.flowLayoutPanelKlient.Name = "flowLayoutPanelKlient";
+            this.flowLayoutPanelKlient.Size = new System.Drawing.Size(780, 415);
+            this.flowLayoutPanelKlient.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.buttoRegKlirnt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(933, 117);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(780, 117);
+            this.panel1.TabIndex = 7;
+            // 
+            // buttoRegKlirnt
+            // 
+            this.buttoRegKlirnt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
+            this.buttoRegKlirnt.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttoRegKlirnt.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttoRegKlirnt.Location = new System.Drawing.Point(605, 15);
+            this.buttoRegKlirnt.Name = "buttoRegKlirnt";
+            this.buttoRegKlirnt.Size = new System.Drawing.Size(162, 82);
+            this.buttoRegKlirnt.TabIndex = 3;
+            this.buttoRegKlirnt.Text = "Зарегестрировать клиента";
+            this.buttoRegKlirnt.UseVisualStyleBackColor = false;
+            this.buttoRegKlirnt.Click += new System.EventHandler(this.buttoRegKlirnt_Click);
             // 
             // label2
             // 
@@ -74,17 +100,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ООО «Посуда»";
             // 
-            // flowLayoutPanelZazaz
-            // 
-            this.flowLayoutPanelZazaz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelZazaz.AutoScroll = true;
-            this.flowLayoutPanelZazaz.Location = new System.Drawing.Point(13, 135);
-            this.flowLayoutPanelZazaz.Name = "flowLayoutPanelZazaz";
-            this.flowLayoutPanelZazaz.Size = new System.Drawing.Size(933, 426);
-            this.flowLayoutPanelZazaz.TabIndex = 4;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DemoPosuda.Properties.Resources.logo;
@@ -96,20 +111,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // HistoryZakaz
+            // KlientList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 573);
-            this.Controls.Add(this.flowLayoutPanelZazaz);
+            this.ClientSize = new System.Drawing.Size(812, 571);
+            this.Controls.Add(this.flowLayoutPanelKlient);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(789, 518);
-            this.Name = "HistoryZakaz";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "История заказов";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "KlientList";
+            this.Text = "Список клиентов";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -119,10 +132,11 @@
 
         #endregion
 
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelKlient;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelZazaz;
+        private System.Windows.Forms.Button buttoRegKlirnt;
     }
 }

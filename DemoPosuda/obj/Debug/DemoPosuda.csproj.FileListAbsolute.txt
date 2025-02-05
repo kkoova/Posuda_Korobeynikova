@@ -85,3 +85,8 @@ C:\Users\1101-22\Desktop\DemoPosuda\DemoPosuda\obj\Debug\DemoPosuda.csproj.CoreC
 C:\Users\1101-22\Desktop\DemoPosuda\DemoPosuda\obj\Debug\DemoPosuda.csproj.CopyComplete
 C:\Users\1101-22\Desktop\DemoPosuda\DemoPosuda\obj\Debug\DemoPosuda.exe
 C:\Users\1101-22\Desktop\DemoPosuda\DemoPosuda\obj\Debug\DemoPosuda.pdb
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.AppForms.KlientList.resources
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.CustomContrrols.KlientControl.resources
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.CustomContrrols.ZakazControl.resources
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.AppForms.AddAndUpdatKlientForm.resources
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.AppForms.CanForm.resources

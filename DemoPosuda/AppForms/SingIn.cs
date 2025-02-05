@@ -11,7 +11,6 @@ namespace DemoPosuda.Forms
     public partial class SingIn : Form
     {
         public Sotrydnik ReturnedValue { get; set; }
-
         /// <summary>
         /// Конструктор
         /// </summary>

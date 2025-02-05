@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="id_ type_client" Type="int" />
           <Property Name="name_client" Type="nvarchar" MaxLength="255" />
           <Property Name="directort_client" Type="nvarchar" MaxLength="255" />
@@ -55,7 +55,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="id_role_sotr" Type="int" />
           <Property Name="fio_sotr" Type="nvarchar" MaxLength="255" />
           <Property Name="login_sotr" Type="nvarchar" MaxLength="255" />
@@ -304,7 +304,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id__type_client" Type="Int32" />
           <Property Name="name_client" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="directort_client" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -356,7 +356,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_role_sotr" Type="Int32" />
           <Property Name="fio_sotr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="login_sotr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />

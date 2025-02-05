@@ -1,4 +1,5 @@
-﻿using DemoPosuda.Logick;
+﻿using DemoPosuda.CustomContrrols;
+using DemoPosuda.Logick;
 using DemoPosuda.Models;
 using System;
 using System.Data;
@@ -12,107 +13,35 @@ namespace DemoPosuda.AppForms
     /// </summary>
     public partial class HistoryZakaz : Form
     {
-        string client;
+        Clietn client;
 
         /// <summary>
         /// Констркутор
         /// </summary>
-        public HistoryZakaz()
+        public HistoryZakaz(Clietn clietn)
         {
             InitializeComponent();
 
-            Combo();
+            this.client = clietn;
 
-            ShowHistory();
+            SetDataClientHisstory();
         }
 
-        /// <summary>
-        /// Настройка <see cref="comboBoxClient"/>
-        /// </summary>
-        private void Combo()
+        private void SetDataClientHisstory()
         {
-            using (var context = new KorobeynikovaPosudaEntities())
-            {
-                var clientist = context.Clietn.ToList();
+            flowLayoutPanelZazaz.Controls.Clear();
 
-                comboBoxClient.Items.Add("Все клиенты");
-                foreach (var item in clientist)
-                {
-                    comboBoxClient.Items.Add(item.directort_client);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Показ историии в <see cref="dataGridViewHistory"/>
-        /// </summary>
-        private void ShowHistory()
-        {
-            using (var context = new KorobeynikovaPosudaEntities())
+            using(var context = new KorobeynikovaPosudaEntities())
             {
-                if (client == null) 
-                {
-                    var zakazs = context.Zakaz
-                    .Select(z => new
-                    {
-                        ФИО = z.Clietn.directort_client,
-                        Рейтинг_клиента = z.Clietn.rate_client,
-                        Дата_заказа = z.data_zakaz,
-                        Сумма = z.Tovar.cost_tovar * z.kolvo_tovar_in_zakaz,
-                        Пункт_выдачи = z.Punkt.index_punkt,
-                        Статус_заказа = z.Status.name_state,
-                    })
+                var zakaz = context.Zakaz
+                    .Where(c => c.id_name_client == client.id)
                     .ToList();
 
-                    dataGridViewHistory.DataSource = zakazs;
-                }
-                else
-                {
-                    var zakazs = context.Zakaz
-                    .Where(p => p.Clietn.directort_client == client)
-                    .Select(z => new
-                    {
-                        ФИО = z.Clietn.directort_client,
-                        Рейтинг_клиента = z.Clietn.rate_client,
-                        Дата_заказа = z.data_zakaz,
-                        Сумма = z.Tovar.cost_tovar * z.kolvo_tovar_in_zakaz,
-                        Пункт_выдачи = z.Punkt.index_punkt,
-                        Статус_заказа = z.Status.name_state,
-                    })
-                    .ToList();
-
-                    dataGridViewHistory.DataSource = zakazs;
+                foreach (var z in zakaz) {
+                    var zalazNew = new ZakazControl(z);
+                    flowLayoutPanelZazaz.Controls.Add(zalazNew);
                 }
             }
-        }
-
-        /// <summary>
-        /// Настройка <see cref="comboBoxClient"/>
-        /// </summary>
-        private void comboBoxClient_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            client = comboBoxClient.Text;
-
-            if (client == "Все клиенты") client = null;
-
-            ShowHistory();
-
-            if (client == "Все клиенты")
-                buttonSaleChet.Enabled = false;
-            else
-                buttonSaleChet.Enabled = true;
-        }
-
-        /// <summary>
-        /// Медот подсчета скидки заказчику
-        /// </summary>
-        private void buttonSaleChet_Click(object sender, EventArgs e)
-        {
-            var saleRas = new SaleRachetZakazchik();
-
-            var result = saleRas.SaleRachet(client);
-
-            MessageBox.Show($"Скидка для текущего Заказчика равна {result} %");
         }
     }
 }

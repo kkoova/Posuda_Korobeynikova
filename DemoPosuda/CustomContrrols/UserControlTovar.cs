@@ -14,21 +14,25 @@ namespace DemoPosuda.Contrrols
     {
         private Tovar tovar { get; set; }
         private int role;
+        Main main;
 
         /// <summary>
         /// Конструктор
         /// </summary>
-        public UserControlTovar(Tovar tovar = null, int role = 4)
+        public UserControlTovar(Tovar tovar = null, int role = 4, Main main = null)
         {
             InitializeComponent();
 
             this.tovar = tovar;
             this.role = role;
+            this.main = main;
 
             SetData();
 
             if (role == 1)
-                buttonDellTovar.Enabled = true;
+                buttonDellTovar.Visible = true;
+            else if (role == 3)
+                buttonAddToCart.Visible = true;
         }
 
         /// <summary>
@@ -79,8 +83,14 @@ namespace DemoPosuda.Contrrols
                 if (edit.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("Вы отредактировали товар!");
+                    main.ShowTovar();
                 }
             }
+        }
+
+        private void buttonAddToCart_Click(object sender, EventArgs e)
+        {
+            main.UpdateCountTovar(tovar);
         }
     }
 }

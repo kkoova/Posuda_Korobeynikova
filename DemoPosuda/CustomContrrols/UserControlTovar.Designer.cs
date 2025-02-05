@@ -39,6 +39,7 @@
             this.labelNameTovar = new System.Windows.Forms.Label();
             this.buttonDellTovar = new System.Windows.Forms.Button();
             this.labelKolSclad = new System.Windows.Forms.Label();
+            this.buttonAddToCart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,13 +129,13 @@
             // 
             // buttonDellTovar
             // 
-            this.buttonDellTovar.Enabled = false;
-            this.buttonDellTovar.Location = new System.Drawing.Point(713, 96);
+            this.buttonDellTovar.Location = new System.Drawing.Point(531, 84);
             this.buttonDellTovar.Name = "buttonDellTovar";
-            this.buttonDellTovar.Size = new System.Drawing.Size(75, 23);
+            this.buttonDellTovar.Size = new System.Drawing.Size(75, 35);
             this.buttonDellTovar.TabIndex = 16;
             this.buttonDellTovar.Text = "Удалить";
             this.buttonDellTovar.UseVisualStyleBackColor = true;
+            this.buttonDellTovar.Visible = false;
             // 
             // labelKolSclad
             // 
@@ -146,11 +147,24 @@
             this.labelKolSclad.Text = "0";
             this.labelKolSclad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonAddToCart
+            // 
+            this.buttonAddToCart.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddToCart.Location = new System.Drawing.Point(612, 84);
+            this.buttonAddToCart.Name = "buttonAddToCart";
+            this.buttonAddToCart.Size = new System.Drawing.Size(176, 35);
+            this.buttonAddToCart.TabIndex = 18;
+            this.buttonAddToCart.Text = "Добавить в корзину";
+            this.buttonAddToCart.UseVisualStyleBackColor = true;
+            this.buttonAddToCart.Visible = false;
+            this.buttonAddToCart.Click += new System.EventHandler(this.buttonAddToCart_Click);
+            // 
             // UserControlTovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
+            this.Controls.Add(this.buttonAddToCart);
             this.Controls.Add(this.buttonDellTovar);
             this.Controls.Add(this.labelKolSclad);
             this.Controls.Add(this.labelSale);
@@ -185,5 +199,6 @@
         private System.Windows.Forms.Label labelNameTovar;
         private System.Windows.Forms.Button buttonDellTovar;
         private System.Windows.Forms.Label labelKolSclad;
+        private System.Windows.Forms.Button buttonAddToCart;
     }
 }

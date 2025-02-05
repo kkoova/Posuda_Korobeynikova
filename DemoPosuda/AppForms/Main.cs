@@ -16,6 +16,7 @@ namespace DemoPosuda.Forms
         public Sotrydnik user;
         public int userRole;
         public List<Tovar> tovarList;
+        public List<Tovar> tovarClientList = new List<Tovar>();
 
         /// <summary>
         /// Конструктор
@@ -29,6 +30,22 @@ namespace DemoPosuda.Forms
             AddUserLogin();
 
             ComboboxProizv();
+
+            ShowTovar();
+        }
+
+        private void SetCurrentCountTovar()
+        {
+            if (tovarClientList != null)
+            {
+                if (tovarClientList.Count > 0 && userRole == 3)
+                {
+                    labelKolvoToar.Visible = true;
+                    labelKolvoToar.Text = tovarClientList.Count.ToString();
+                }
+                else
+                    labelKolvoToar.Visible = false;
+            }
         }
 
         /// <summary>
@@ -40,17 +57,22 @@ namespace DemoPosuda.Forms
             {
                 userRole = Convert.ToInt16(user.id_role_sotr);
 
-                labelUserFio.Text = user.fio_sotr + user.RoleSotrudnik.role_sotr;
+                labelUserFio.Text = user.fio_sotr;
 
                 if (userRole == 1)
                 {
                     AddТоварToolStripMenuItem.Visible = true;
-                    zakazToolStripMenuItem.Visible = true;
+                    labelUserFio.Text += " Администратор";
                 }
                 else if (userRole == 2) 
                 {
                     AddТоварToolStripMenuItem.Visible = false;
-                    zakazToolStripMenuItem.Visible = true;
+                    labelUserFio.Text += " Менеджер";
+                }
+                else if (userRole == 3)
+                {
+                    labelUserFio.Text += " Клиент";
+                    pictureBoxCan.Visible = true;
                 }
 
             }
@@ -116,6 +138,7 @@ namespace DemoPosuda.Forms
             }
 
             AddUserLogin();
+            ShowTovar();
         }
 
         /// <summary>
@@ -130,7 +153,7 @@ namespace DemoPosuda.Forms
         /// <summary>
         /// Применение фильтра
         /// </summary>
-        private void ShowTovar()
+        public void ShowTovar()
         {
             ApplyFilters();
         }
@@ -209,7 +232,7 @@ namespace DemoPosuda.Forms
 
             foreach (var item in tovarList)
             {
-                var tovar = new UserControlTovar(item, userRole);
+                var tovar = new UserControlTovar(item, userRole, this);
 
                 flowLayoutPanelTovar.Controls.Add(tovar);
             }
@@ -233,13 +256,22 @@ namespace DemoPosuda.Forms
             ShowTovar();
         }
 
-        /// <summary>
-        /// Открытие формы истории заказа
-        /// </summary>
-        private void shouZakazToolStripMenuItem_Click(object sender, EventArgs e)
+        private void просмотрПользователейToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var history = new HistoryZakaz();
-            history.ShowDialog();
+            var klient = new KlientList();
+            klient.ShowDialog();
+        }
+
+        public void UpdateCountTovar(Tovar tovar)
+        {
+            tovarClientList.Add(tovar);
+            SetCurrentCountTovar();
+        }
+
+        private void pictureBoxCan_Click(object sender, EventArgs e)
+        {
+            var canForm = new CanForm(tovarClientList, user);
+            canForm.ShowDialog();
         }
     }
 }

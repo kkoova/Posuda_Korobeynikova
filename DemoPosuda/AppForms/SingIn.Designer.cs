@@ -131,7 +131,7 @@
             // 
             // buttonGo
             // 
-            this.buttonGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.buttonGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
             this.buttonGo.ForeColor = System.Drawing.Color.White;
             this.buttonGo.Location = new System.Drawing.Point(174, 274);
             this.buttonGo.Name = "buttonGo";

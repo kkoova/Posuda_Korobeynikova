@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelKolvoToar = new System.Windows.Forms.Label();
+            this.pictureBoxCan = new System.Windows.Forms.PictureBox();
             this.labelUserFio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,13 +48,12 @@
             this.flowLayoutPanelTovar = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddТоварToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.акаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zakazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shouZakazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотрПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,6 +65,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.labelKolvoToar);
+            this.panel1.Controls.Add(this.pictureBoxCan);
             this.panel1.Controls.Add(this.labelUserFio);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -74,14 +77,40 @@
             this.panel1.Size = new System.Drawing.Size(850, 115);
             this.panel1.TabIndex = 1;
             // 
+            // labelKolvoToar
+            // 
+            this.labelKolvoToar.AutoSize = true;
+            this.labelKolvoToar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
+            this.labelKolvoToar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelKolvoToar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelKolvoToar.Location = new System.Drawing.Point(823, 87);
+            this.labelKolvoToar.Name = "labelKolvoToar";
+            this.labelKolvoToar.Size = new System.Drawing.Size(17, 19);
+            this.labelKolvoToar.TabIndex = 4;
+            this.labelKolvoToar.Text = "4";
+            this.labelKolvoToar.Visible = false;
+            // 
+            // pictureBoxCan
+            // 
+            this.pictureBoxCan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCan.Image = global::DemoPosuda.Properties.Resources.bucet1;
+            this.pictureBoxCan.Location = new System.Drawing.Point(789, 59);
+            this.pictureBoxCan.Name = "pictureBoxCan";
+            this.pictureBoxCan.Size = new System.Drawing.Size(32, 35);
+            this.pictureBoxCan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCan.TabIndex = 3;
+            this.pictureBoxCan.TabStop = false;
+            this.pictureBoxCan.Visible = false;
+            this.pictureBoxCan.Click += new System.EventHandler(this.pictureBoxCan_Click);
+            // 
             // labelUserFio
             // 
             this.labelUserFio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUserFio.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUserFio.Location = new System.Drawing.Point(569, 15);
+            this.labelUserFio.Location = new System.Drawing.Point(465, 15);
             this.labelUserFio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUserFio.Name = "labelUserFio";
-            this.labelUserFio.Size = new System.Drawing.Size(267, 46);
+            this.labelUserFio.Size = new System.Drawing.Size(371, 23);
             this.labelUserFio.TabIndex = 2;
             this.labelUserFio.Text = "Гость";
             this.labelUserFio.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -229,8 +258,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.товарыToolStripMenuItem,
-            this.акаунтToolStripMenuItem,
-            this.zakazToolStripMenuItem});
+            this.акаунтToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(850, 24);
@@ -240,18 +268,10 @@
             // товарыToolStripMenuItem
             // 
             this.товарыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ShowToolStripMenuItem,
             this.AddТоварToolStripMenuItem});
             this.товарыToolStripMenuItem.Name = "товарыToolStripMenuItem";
             this.товарыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.товарыToolStripMenuItem.Text = "Товары";
-            // 
-            // ShowToolStripMenuItem
-            // 
-            this.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem";
-            this.ShowToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.ShowToolStripMenuItem.Text = "Просмотр";
-            this.ShowToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
             // 
             // AddТоварToolStripMenuItem
             // 
@@ -264,33 +284,25 @@
             // акаунтToolStripMenuItem
             // 
             this.акаунтToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ExitToolStripMenuItem});
+            this.ExitToolStripMenuItem,
+            this.просмотрПользователейToolStripMenuItem});
             this.акаунтToolStripMenuItem.Name = "акаунтToolStripMenuItem";
-            this.акаунтToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.акаунтToolStripMenuItem.Text = "Аккаунт";
+            this.акаунтToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.акаунтToolStripMenuItem.Text = "Пользователи";
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.ExitToolStripMenuItem.Text = "Выйти";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.ExitToolStripMenuItem.Text = "Авторизация";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // zakazToolStripMenuItem
+            // просмотрПользователейToolStripMenuItem
             // 
-            this.zakazToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shouZakazToolStripMenuItem});
-            this.zakazToolStripMenuItem.Name = "zakazToolStripMenuItem";
-            this.zakazToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.zakazToolStripMenuItem.Text = "Заказы";
-            this.zakazToolStripMenuItem.Visible = false;
-            // 
-            // shouZakazToolStripMenuItem
-            // 
-            this.shouZakazToolStripMenuItem.Name = "shouZakazToolStripMenuItem";
-            this.shouZakazToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.shouZakazToolStripMenuItem.Text = "Просмотр";
-            this.shouZakazToolStripMenuItem.Click += new System.EventHandler(this.shouZakazToolStripMenuItem_Click);
+            this.просмотрПользователейToolStripMenuItem.Name = "просмотрПользователейToolStripMenuItem";
+            this.просмотрПользователейToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.просмотрПользователейToolStripMenuItem.Text = "Просмотр пользователей";
+            this.просмотрПользователейToolStripMenuItem.Click += new System.EventHandler(this.просмотрПользователейToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -308,6 +320,7 @@
             this.Text = "Главная";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -330,7 +343,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTovar;
         private System.Windows.Forms.ToolStripMenuItem товарыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ShowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem акаунтToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxFindName;
@@ -342,7 +354,8 @@
         private System.Windows.Forms.ToolStripMenuItem AddТоварToolStripMenuItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripMenuItem zakazToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shouZakazToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотрПользователейToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBoxCan;
+        private System.Windows.Forms.Label labelKolvoToar;
     }
 }

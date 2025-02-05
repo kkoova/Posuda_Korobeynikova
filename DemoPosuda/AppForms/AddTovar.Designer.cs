@@ -224,7 +224,7 @@
             // 
             // buttonImage
             // 
-            this.buttonImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
+            this.buttonImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
             this.buttonImage.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.buttonImage.Location = new System.Drawing.Point(160, 387);
             this.buttonImage.Name = "buttonImage";
@@ -236,7 +236,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Location = new System.Drawing.Point(32, 448);
             this.buttonAdd.Name = "buttonAdd";
