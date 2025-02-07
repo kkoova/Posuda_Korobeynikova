@@ -106,7 +106,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="id_artic_zakaz" Type="int" />
     <Property Name="kolvo_tovar_in_zakaz" Type="float" />
     <Property Name="data_zakaz" Type="datetime" />

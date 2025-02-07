@@ -46,6 +46,8 @@ namespace DemoPosuda.Forms
                 else
                     labelKolvoToar.Visible = false;
             }
+            else
+                labelKolvoToar.Visible = false;
         }
 
         /// <summary>
@@ -271,7 +273,17 @@ namespace DemoPosuda.Forms
         private void pictureBoxCan_Click(object sender, EventArgs e)
         {
             var canForm = new CanForm(tovarClientList, user);
-            canForm.ShowDialog();
+            if (canForm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Вы оформили заказ!");
+                tovarClientList.Clear();
+                SetCurrentCountTovar();
+            }
+        }
+
+        private void pfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

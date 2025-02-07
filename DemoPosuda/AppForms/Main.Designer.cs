@@ -52,6 +52,7 @@
             this.акаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -258,7 +259,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.товарыToolStripMenuItem,
-            this.акаунтToolStripMenuItem});
+            this.акаунтToolStripMenuItem,
+            this.pfToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(850, 24);
@@ -303,6 +305,13 @@
             this.просмотрПользователейToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.просмотрПользователейToolStripMenuItem.Text = "Просмотр пользователей";
             this.просмотрПользователейToolStripMenuItem.Click += new System.EventHandler(this.просмотрПользователейToolStripMenuItem_Click);
+            // 
+            // pfToolStripMenuItem
+            // 
+            this.pfToolStripMenuItem.Name = "pfToolStripMenuItem";
+            this.pfToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.pfToolStripMenuItem.Text = "Заказы";
+            this.pfToolStripMenuItem.Click += new System.EventHandler(this.pfToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -357,5 +366,6 @@
         private System.Windows.Forms.ToolStripMenuItem просмотрПользователейToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBoxCan;
         private System.Windows.Forms.Label labelKolvoToar;
+        private System.Windows.Forms.ToolStripMenuItem pfToolStripMenuItem;
     }
 }

@@ -34,13 +34,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanelTovar = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxDataStart = new System.Windows.Forms.TextBox();
-            this.textBoxDataEdn = new System.Windows.Forms.TextBox();
-            this.comboBoxPunkt = new System.Windows.Forms.ComboBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.labelKode = new System.Windows.Forms.Label();
             this.labelCost = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.comboBoxPunkt = new System.Windows.Forms.ComboBox();
+            this.textBoxDataEdn = new System.Windows.Forms.TextBox();
+            this.textBoxDataStart = new System.Windows.Forms.TextBox();
+            this.buttonAddZakaz = new System.Windows.Forms.Button();
+            this.labelKode = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -94,67 +94,13 @@
             this.groupBox1.Controls.Add(this.comboBoxPunkt);
             this.groupBox1.Controls.Add(this.textBoxDataEdn);
             this.groupBox1.Controls.Add(this.textBoxDataStart);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonAddZakaz);
             this.groupBox1.Location = new System.Drawing.Point(652, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(193, 482);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные о заказе";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(6, 429);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Оформить заказ";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBoxDataStart
-            // 
-            this.textBoxDataStart.Enabled = false;
-            this.textBoxDataStart.Location = new System.Drawing.Point(6, 162);
-            this.textBoxDataStart.Name = "textBoxDataStart";
-            this.textBoxDataStart.Size = new System.Drawing.Size(181, 26);
-            this.textBoxDataStart.TabIndex = 1;
-            // 
-            // textBoxDataEdn
-            // 
-            this.textBoxDataEdn.Enabled = false;
-            this.textBoxDataEdn.Location = new System.Drawing.Point(6, 194);
-            this.textBoxDataEdn.Name = "textBoxDataEdn";
-            this.textBoxDataEdn.Size = new System.Drawing.Size(181, 26);
-            this.textBoxDataEdn.TabIndex = 2;
-            // 
-            // comboBoxPunkt
-            // 
-            this.comboBoxPunkt.FormattingEnabled = true;
-            this.comboBoxPunkt.Location = new System.Drawing.Point(6, 60);
-            this.comboBoxPunkt.Name = "comboBoxPunkt";
-            this.comboBoxPunkt.Size = new System.Drawing.Size(181, 26);
-            this.comboBoxPunkt.TabIndex = 3;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Enabled = false;
-            this.textBoxName.Location = new System.Drawing.Point(6, 28);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(181, 26);
-            this.textBoxName.TabIndex = 4;
-            // 
-            // labelKode
-            // 
-            this.labelKode.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelKode.Location = new System.Drawing.Point(6, 102);
-            this.labelKode.Name = "labelKode";
-            this.labelKode.Size = new System.Drawing.Size(181, 31);
-            this.labelKode.TabIndex = 5;
-            this.labelKode.Text = "label3";
-            this.labelKode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelCost
             // 
@@ -165,6 +111,61 @@
             this.labelCost.TabIndex = 6;
             this.labelCost.Text = "label3";
             this.labelCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Enabled = false;
+            this.textBoxName.Location = new System.Drawing.Point(6, 28);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(181, 26);
+            this.textBoxName.TabIndex = 4;
+            // 
+            // comboBoxPunkt
+            // 
+            this.comboBoxPunkt.FormattingEnabled = true;
+            this.comboBoxPunkt.Location = new System.Drawing.Point(6, 60);
+            this.comboBoxPunkt.Name = "comboBoxPunkt";
+            this.comboBoxPunkt.Size = new System.Drawing.Size(181, 26);
+            this.comboBoxPunkt.TabIndex = 3;
+            // 
+            // textBoxDataEdn
+            // 
+            this.textBoxDataEdn.Enabled = false;
+            this.textBoxDataEdn.Location = new System.Drawing.Point(6, 194);
+            this.textBoxDataEdn.Name = "textBoxDataEdn";
+            this.textBoxDataEdn.Size = new System.Drawing.Size(181, 26);
+            this.textBoxDataEdn.TabIndex = 2;
+            // 
+            // textBoxDataStart
+            // 
+            this.textBoxDataStart.Enabled = false;
+            this.textBoxDataStart.Location = new System.Drawing.Point(6, 162);
+            this.textBoxDataStart.Name = "textBoxDataStart";
+            this.textBoxDataStart.Size = new System.Drawing.Size(181, 26);
+            this.textBoxDataStart.TabIndex = 1;
+            // 
+            // buttonAddZakaz
+            // 
+            this.buttonAddZakaz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
+            this.buttonAddZakaz.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddZakaz.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonAddZakaz.Location = new System.Drawing.Point(6, 429);
+            this.buttonAddZakaz.Name = "buttonAddZakaz";
+            this.buttonAddZakaz.Size = new System.Drawing.Size(181, 47);
+            this.buttonAddZakaz.TabIndex = 0;
+            this.buttonAddZakaz.Text = "Оформить заказ";
+            this.buttonAddZakaz.UseVisualStyleBackColor = false;
+            this.buttonAddZakaz.Click += new System.EventHandler(this.buttonAddZakaz_Click);
+            // 
+            // labelKode
+            // 
+            this.labelKode.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelKode.Location = new System.Drawing.Point(6, 102);
+            this.labelKode.Name = "labelKode";
+            this.labelKode.Size = new System.Drawing.Size(181, 31);
+            this.labelKode.TabIndex = 5;
+            this.labelKode.Text = "Дата заказа:";
+            this.labelKode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CanForm
             // 
@@ -178,7 +179,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CanForm";
             this.Text = "Корзина";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -196,12 +197,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTovar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label labelKode;
+        private System.Windows.Forms.Button buttonAddZakaz;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.ComboBox comboBoxPunkt;
         private System.Windows.Forms.TextBox textBoxDataEdn;
         private System.Windows.Forms.TextBox textBoxDataStart;
         private System.Windows.Forms.Label labelCost;
+        private System.Windows.Forms.Label labelKode;
     }
 }

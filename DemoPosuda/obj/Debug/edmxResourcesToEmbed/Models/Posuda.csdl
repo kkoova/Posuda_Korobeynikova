@@ -122,7 +122,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_artic_zakaz" Type="Int32" />
     <Property Name="kolvo_tovar_in_zakaz" Type="Double" />
     <Property Name="data_zakaz" Type="DateTime" Precision="3" />

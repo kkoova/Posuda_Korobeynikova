@@ -118,6 +118,12 @@
     <Compile Include="CustomContrrols\ZakazControl.Designer.cs">
       <DependentUpon>ZakazControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomContrrols\UpdateZakazControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomContrrols\UpdateZakazControl.Designer.cs">
+      <DependentUpon>UpdateZakazControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logick\SaleRachet.cs" />
     <Compile Include="Logick\SaleRachetZakazchik.cs" />
     <Compile Include="Models\Clietn.cs">
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomContrrols\ZakazControl.resx">
       <DependentUpon>ZakazControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomContrrols\UpdateZakazControl.resx">
+      <DependentUpon>UpdateZakazControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
