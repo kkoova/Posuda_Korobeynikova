@@ -1,4 +1,5 @@
-﻿using DemoPosuda.Models;
+﻿using DemoPosuda.AppForms;
+using DemoPosuda.Models;
 using System.Windows.Forms;
 
 namespace DemoPosuda.CustomContrrols
@@ -6,11 +7,13 @@ namespace DemoPosuda.CustomContrrols
     public partial class UpdateZakazControl : UserControl
     {
         Zakaz zakaz;
+        HistoryZakaz historyZakaz;
 
-        public UpdateZakazControl(Zakaz zakaz)
+        public UpdateZakazControl(Zakaz zakaz, HistoryZakaz historyZakaz)
         {
             InitializeComponent();
             this.zakaz = zakaz;
+            this.historyZakaz = historyZakaz;
             SetDataToControllsZakaz();
         }
 
@@ -30,10 +33,13 @@ namespace DemoPosuda.CustomContrrols
             {
                 var zakStat = context.Zakaz.Find(zakaz.id);
 
-                zakaz.id_state_zakaz = 3;
+                zakStat.id_state_zakaz = 3;
 
                 context.SaveChanges();
             }
+
+            MessageBox.Show("Вы подтвердили заказ!");
+            historyZakaz.SetDataClientHisstoryNoDone();
         }
     }
 }

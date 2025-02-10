@@ -53,6 +53,7 @@
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подтвердитьЗаказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -278,9 +279,8 @@
             // AddТоварToolStripMenuItem
             // 
             this.AddТоварToolStripMenuItem.Name = "AddТоварToolStripMenuItem";
-            this.AddТоварToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.AddТоварToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AddТоварToolStripMenuItem.Text = "Добавить товар";
-            this.AddТоварToolStripMenuItem.Visible = false;
             this.AddТоварToolStripMenuItem.Click += new System.EventHandler(this.AddТоварToolStripMenuItem_Click);
             // 
             // акаунтToolStripMenuItem
@@ -308,10 +308,19 @@
             // 
             // pfToolStripMenuItem
             // 
+            this.pfToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.подтвердитьЗаказыToolStripMenuItem});
             this.pfToolStripMenuItem.Name = "pfToolStripMenuItem";
             this.pfToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.pfToolStripMenuItem.Text = "Заказы";
             this.pfToolStripMenuItem.Click += new System.EventHandler(this.pfToolStripMenuItem_Click);
+            // 
+            // подтвердитьЗаказыToolStripMenuItem
+            // 
+            this.подтвердитьЗаказыToolStripMenuItem.Name = "подтвердитьЗаказыToolStripMenuItem";
+            this.подтвердитьЗаказыToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.подтвердитьЗаказыToolStripMenuItem.Text = "Подтвердить заказы";
+            this.подтвердитьЗаказыToolStripMenuItem.Click += new System.EventHandler(this.подтвердитьЗаказыToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -367,5 +376,6 @@
         private System.Windows.Forms.PictureBox pictureBoxCan;
         private System.Windows.Forms.Label labelKolvoToar;
         private System.Windows.Forms.ToolStripMenuItem pfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem подтвердитьЗаказыToolStripMenuItem;
     }
 }

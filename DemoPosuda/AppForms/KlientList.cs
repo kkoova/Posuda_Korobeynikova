@@ -13,7 +13,7 @@ namespace DemoPosuda.AppForms
             SetConrlossClient();
         }
 
-        private void SetConrlossClient()
+        public void SetConrlossClient()
         {
             flowLayoutPanelKlient.Controls.Clear();
 
@@ -23,7 +23,7 @@ namespace DemoPosuda.AppForms
 
                 foreach (var item in client)
                 {
-                    var clientNew = new KlientControl(item);
+                    var clientNew = new KlientControl(item, this);
                     flowLayoutPanelKlient.Controls.Add(clientNew);
                 }
             }

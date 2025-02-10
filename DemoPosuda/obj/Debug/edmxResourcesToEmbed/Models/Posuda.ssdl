@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="int" Nullable="false" />
     <Property Name="id_ type_client" Type="int" />
     <Property Name="name_client" Type="nvarchar" MaxLength="255" />
     <Property Name="directort_client" Type="nvarchar" MaxLength="255" />
@@ -50,7 +50,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="int" Nullable="false" />
     <Property Name="id_role_sotr" Type="int" />
     <Property Name="fio_sotr" Type="nvarchar" MaxLength="255" />
     <Property Name="login_sotr" Type="nvarchar" MaxLength="255" />

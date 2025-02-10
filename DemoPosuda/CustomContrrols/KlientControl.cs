@@ -6,12 +6,15 @@ namespace DemoPosuda.CustomContrrols
 {
     public partial class KlientControl : UserControl
     {
-        private readonly Clietn client;
-        public KlientControl(Clietn clietn)
+        Clietn client;
+        KlientList klientList;
+
+        public KlientControl(Clietn clietn, KlientList klientList)
         {
             InitializeComponent();
 
             this.client = clietn;
+            this.klientList = klientList;
 
             SetDataClient();
         }
@@ -32,6 +35,18 @@ namespace DemoPosuda.CustomContrrols
         {
             var historyZakazClient = new HistoryZakaz(client);
             historyZakazClient.ShowDialog();
+        }
+
+        private void buttonEdit_Click(object sender, System.EventArgs e)
+        {
+            using (var formUpate = new AddAndUpdatKlientForm(client))
+            {
+                if (formUpate.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Вы успешно обновили пользователя!");
+                    klientList.SetConrlossClient();
+                }
+            }
         }
     }
 }

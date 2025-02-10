@@ -1,6 +1,7 @@
 ﻿using DemoPosuda.Models;
 using System;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace DemoPosuda.AppForms
@@ -9,9 +10,40 @@ namespace DemoPosuda.AppForms
     {
         Clietn clietn;
 
-        public AddAndUpdatKlientForm()
+        public AddAndUpdatKlientForm(Clietn clietn = null)
         {
             InitializeComponent();
+            
+            this.clietn = clietn;
+
+            if (clietn != null)
+            {
+                using (var context = new KorobeynikovaPosudaEntities())
+                {
+                    var clientFind = context.Sotrydnik
+                        .FirstOrDefault(x => x.fio_sotr == clietn.directort_client);
+
+                    if (clientFind != null) 
+                    {
+                        textBoxLogin.Text = clientFind.login_sotr;
+                        textBoxPass.Text = clientFind.pass_sotr;
+                    }
+                    else
+                    {
+                        textBoxLogin.Visible = false;
+                        textBoxPass.Visible = false;
+                    }
+
+                    textBoxName.Text = clietn.directort_client;
+                    comboBoxType.SelectedValue = clietn.id__type_client;
+                    textBoxCompany.Text = clietn.name_client;
+                    maskedTextBoxEmail.Text = clietn.email_client;
+                    maskedTextBoxPhone.Text = clietn.phone_client;
+                    maskedTextBoxIndex.Text = clietn.index_client.ToString();
+                    maskedTextBoxInn.Text = clietn.inn_client.ToString();
+                    numericUpDown1.Value = Convert.ToDecimal(clietn.rate_client);
+                }
+            }
 
             using(var context = new KorobeynikovaPosudaEntities())
             {
@@ -52,19 +84,43 @@ namespace DemoPosuda.AppForms
                         rate_client = Convert.ToDouble(rate),
                     };
 
-                    var newClientRole = new Sotrydnik
+                    if (login == null || password == null)
                     {
-                        id_role_sotr = 3,
-                        fio_sotr = name,
-                        login_sotr = login,
-                        pass_sotr = password,
-                    };
+                        var newClientRole = new Sotrydnik
+                        {
+                            id_role_sotr = 3,
+                            fio_sotr = name,
+                            login_sotr = login,
+                            pass_sotr = password,
+                        };
 
-                    context.Clietn.Add(newClient);
-                    context.Sotrydnik.Add(newClientRole);
+                        context.Sotrydnik.Add(newClientRole);
+                    }
 
-                    context.SaveChanges();
+                    context.Clietn.Add(newClient); 
                 }
+                else
+                {
+                    var findClient = context.Clietn.Find(clietn.id);
+
+                    findClient.id__type_client = Convert.ToInt32(type);
+                    findClient.name_client = name_client;
+                    findClient.directort_client = name;
+                    findClient.email_client = email;
+                    findClient.phone_client = phone;
+                    findClient.index_client = Convert.ToDouble(index);
+                    findClient.inn_client = Convert.ToInt32(inn);
+                    findClient.rate_client = Convert.ToDouble(rate);
+
+                    var clientFind = context.Sotrydnik
+                        .FirstOrDefault(x => x.fio_sotr == clietn.directort_client);
+
+                    clientFind.fio_sotr = name;
+                    clientFind.login_sotr = login;
+                    clientFind.pass_sotr = password;
+                }
+
+                context.SaveChanges();
             }
 
             DialogResult = DialogResult.OK;

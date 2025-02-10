@@ -90,3 +90,4 @@ D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.CustomContrrols.KlientContro
 D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.CustomContrrols.ZakazControl.resources
 D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.AppForms.AddAndUpdatKlientForm.resources
 D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.AppForms.CanForm.resources
+D:\C#\Demo\21.01.25\DemoPosuda\obj\Debug\DemoPosuda.CustomContrrols.UpdateZakazControl.resources

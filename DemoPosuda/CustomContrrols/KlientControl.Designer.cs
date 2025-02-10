@@ -37,6 +37,7 @@
             this.buttonHistory = new System.Windows.Forms.Button();
             this.labelINN = new System.Windows.Forms.Label();
             this.labelRate = new System.Windows.Forms.Label();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelYypeClient
@@ -92,7 +93,7 @@
             // labelIndex
             // 
             this.labelIndex.AutoSize = true;
-            this.labelIndex.Location = new System.Drawing.Point(575, 57);
+            this.labelIndex.Location = new System.Drawing.Point(531, 57);
             this.labelIndex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIndex.Name = "labelIndex";
             this.labelIndex.Size = new System.Drawing.Size(46, 18);
@@ -124,18 +125,30 @@
             // 
             this.labelRate.AutoSize = true;
             this.labelRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
-            this.labelRate.Location = new System.Drawing.Point(575, 26);
+            this.labelRate.Location = new System.Drawing.Point(531, 26);
             this.labelRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRate.Name = "labelRate";
             this.labelRate.Size = new System.Drawing.Size(46, 18);
             this.labelRate.TabIndex = 8;
             this.labelRate.Text = "label2";
             // 
+            // buttonEdit
+            // 
+            this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(196)))), ((int)(((byte)(197)))));
+            this.buttonEdit.Location = new System.Drawing.Point(611, 21);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(36, 52);
+            this.buttonEdit.TabIndex = 9;
+            this.buttonEdit.Text = "✎";
+            this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
             // KlientControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.labelRate);
             this.Controls.Add(this.labelINN);
             this.Controls.Add(this.buttonHistory);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.Button buttonHistory;
         private System.Windows.Forms.Label labelINN;
         private System.Windows.Forms.Label labelRate;
+        private System.Windows.Forms.Button buttonEdit;
     }
 }

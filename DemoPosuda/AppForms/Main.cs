@@ -63,12 +63,18 @@ namespace DemoPosuda.Forms
 
                 if (userRole == 1)
                 {
-                    AddТоварToolStripMenuItem.Visible = true;
+                    AddТоварToolStripMenuItem.Enabled = true;
+                    просмотрПользователейToolStripMenuItem.Enabled = false;
+                    pfToolStripMenuItem.Enabled = false;
+                    pictureBoxCan.Visible = false;
                     labelUserFio.Text += " Администратор";
                 }
                 else if (userRole == 2) 
                 {
-                    AddТоварToolStripMenuItem.Visible = false;
+                    AddТоварToolStripMenuItem.Enabled = false;
+                    pfToolStripMenuItem.Enabled = true;
+                    pictureBoxCan.Visible = false;
+                    просмотрПользователейToolStripMenuItem.Enabled = true;
                     labelUserFio.Text += " Менеджер";
                 }
                 else if (userRole == 3)
@@ -80,7 +86,10 @@ namespace DemoPosuda.Forms
             }
             else
             {
-                AddТоварToolStripMenuItem.Visible = false;
+                AddТоварToolStripMenuItem.Enabled = false;
+                pictureBoxCan.Visible = false;
+                pfToolStripMenuItem.Enabled = false;
+                просмотрПользователейToolStripMenuItem.Enabled = false;
                 labelUserFio.Text = "Гость";
             }
         }
@@ -284,6 +293,12 @@ namespace DemoPosuda.Forms
         private void pfToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void подтвердитьЗаказыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var newGistForm = new HistoryZakaz();
+            newGistForm.ShowDialog();
         }
     }
 }
