@@ -5,14 +5,24 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.AppForms
 {
+    /// <summary>
+    /// Список клиентов
+    /// </summary>
     public partial class KlientList : Form
     {
+
+        /// <summary>
+        /// Ктор
+        /// </summary>
         public KlientList()
         {
             InitializeComponent();
             SetConrlossClient();
         }
 
+        /// <summary>
+        /// Вывод списка клиетов
+        /// </summary>
         public void SetConrlossClient()
         {
             flowLayoutPanelKlient.Controls.Clear();
@@ -29,6 +39,9 @@ namespace DemoPosuda.AppForms
             }
         }
 
+        /// <summary>
+        /// Обработка добавление пользователя
+        /// </summary>
         private void buttoRegKlirnt_Click(object sender, System.EventArgs e)
         {
             using (var newKlient = new AddAndUpdatKlientForm()) 

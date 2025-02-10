@@ -88,6 +88,9 @@ namespace DemoPosuda.Contrrols
             }
         }
 
+        /// <summary>
+        /// Обновление списка выбранных товаров
+        /// </summary>
         private void buttonAddToCart_Click(object sender, EventArgs e)
         {
             main.UpdateCountTovar(tovar);

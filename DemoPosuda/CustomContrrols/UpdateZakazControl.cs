@@ -4,11 +4,17 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.CustomContrrols
 {
+    /// <summary>
+    /// Обновление заказов менеджером
+    /// </summary>
     public partial class UpdateZakazControl : UserControl
     {
         Zakaz zakaz;
         HistoryZakaz historyZakaz;
 
+        /// <summary>
+        /// ктор
+        /// </summary>
         public UpdateZakazControl(Zakaz zakaz, HistoryZakaz historyZakaz)
         {
             InitializeComponent();
@@ -17,6 +23,9 @@ namespace DemoPosuda.CustomContrrols
             SetDataToControllsZakaz();
         }
 
+        /// <summary>
+        /// Заполнение полей
+        /// </summary>
         private void SetDataToControllsZakaz()
         {
             labelArticul.Text = zakaz.Tovar.articyl_tovar.ToString();
@@ -27,6 +36,9 @@ namespace DemoPosuda.CustomContrrols
             labelFIO.Text = zakaz.Clietn.name_client;
          }
 
+        /// <summary>
+        /// Обновление заказа
+        /// </summary>
         private void button1_Click(object sender, System.EventArgs e)
         {
             using (var context = new KorobeynikovaPosudaEntities())

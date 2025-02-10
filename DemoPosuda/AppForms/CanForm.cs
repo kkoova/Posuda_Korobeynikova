@@ -7,11 +7,18 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.AppForms
 {
+    /// <summary>
+    /// Фомма для добавление заказа
+    /// </summary>
     public partial class CanForm : Form
     {
         Sotrydnik clietn;
         List<Tovar> tovarsList;
         Random rand = new Random();
+
+        /// <summary>
+        /// Ктор
+        /// </summary>
         public CanForm(List<Tovar> tovarsList, Sotrydnik clietn)
         {
             InitializeComponent();
@@ -46,6 +53,9 @@ namespace DemoPosuda.AppForms
             }
         }
 
+        /// <summary>
+        /// Вывод списка товаров
+        /// </summary>
         private void SetTovar()
         {
             flowLayoutPanelTovar.Controls.Clear();
@@ -58,6 +68,9 @@ namespace DemoPosuda.AppForms
             }
         }
 
+        /// <summary>
+        /// Оформление заказа
+        /// </summary>
         private void buttonAddZakaz_Click(object sender, EventArgs e)
         {
             using (var context = new KorobeynikovaPosudaEntities())

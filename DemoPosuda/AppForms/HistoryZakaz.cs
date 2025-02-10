@@ -33,6 +33,9 @@ namespace DemoPosuda.AppForms
             
         }
 
+        /// <summary>
+        /// Список заказов клиента
+        /// </summary>
         private void SetDataClientHisstory()
         {
             flowLayoutPanelZazaz.Controls.Clear();
@@ -50,6 +53,9 @@ namespace DemoPosuda.AppForms
             }
         }
 
+        /// <summary>
+        /// Форма подтверждение заказа клиента
+        /// </summary>
         public void SetDataClientHisstoryNoDone()
         {
             flowLayoutPanelZazaz.Controls.Clear();

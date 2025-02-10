@@ -1,15 +1,20 @@
 ﻿using DemoPosuda.Models;
 using System;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace DemoPosuda.AppForms
 {
+    /// <summary>
+    /// Обновление и добавление клиента и сотрудника
+    /// </summary>
     public partial class AddAndUpdatKlientForm : Form
     {
         Clietn clietn;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public AddAndUpdatKlientForm(Clietn clietn = null)
         {
             InitializeComponent();
@@ -55,6 +60,9 @@ namespace DemoPosuda.AppForms
             }
         }
 
+        /// <summary>
+        /// Добавление/обнвление сотрудника
+        /// </summary>
         private void buttonGo_Click(object sender, System.EventArgs e)
         {
             var name = textBoxName.Text;
@@ -84,7 +92,7 @@ namespace DemoPosuda.AppForms
                         rate_client = Convert.ToDouble(rate),
                     };
 
-                    if (login == null || password == null)
+                    if (login != "" && password != "")
                     {
                         var newClientRole = new Sotrydnik
                         {
@@ -112,12 +120,16 @@ namespace DemoPosuda.AppForms
                     findClient.inn_client = Convert.ToInt32(inn);
                     findClient.rate_client = Convert.ToDouble(rate);
 
-                    var clientFind = context.Sotrydnik
+                    if (login != "" && password != "")
+                    {
+                        var clientFind = context.Sotrydnik
                         .FirstOrDefault(x => x.fio_sotr == clietn.directort_client);
 
-                    clientFind.fio_sotr = name;
-                    clientFind.login_sotr = login;
-                    clientFind.pass_sotr = password;
+                        clientFind.fio_sotr = name;
+                        clientFind.login_sotr = login;
+                        clientFind.pass_sotr = password;
+                    }
+
                 }
 
                 context.SaveChanges();

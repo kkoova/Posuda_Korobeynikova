@@ -4,11 +4,17 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.CustomContrrols
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class KlientControl : UserControl
     {
         Clietn client;
         KlientList klientList;
 
+        /// <summary>
+        /// ктор
+        /// </summary>
         public KlientControl(Clietn clietn, KlientList klientList)
         {
             InitializeComponent();
@@ -19,6 +25,9 @@ namespace DemoPosuda.CustomContrrols
             SetDataClient();
         }
 
+        /// <summary>
+        /// Заполнение полей
+        /// </summary>
         private void SetDataClient()
         {
             labelYypeClient.Text = client.TypeClient.type_client;
@@ -31,12 +40,18 @@ namespace DemoPosuda.CustomContrrols
             labelRate.Text = client.rate_client.ToString();
         }
 
+        /// <summary>
+        /// ФОрма истории заказов
+        /// </summary>
         private void buttonHistory_Click(object sender, System.EventArgs e)
         {
             var historyZakazClient = new HistoryZakaz(client);
             historyZakazClient.ShowDialog();
         }
 
+        /// <summary>
+        /// Форма редактирование клиента
+        /// </summary>
         private void buttonEdit_Click(object sender, System.EventArgs e)
         {
             using (var formUpate = new AddAndUpdatKlientForm(client))

@@ -313,7 +313,6 @@
             this.pfToolStripMenuItem.Name = "pfToolStripMenuItem";
             this.pfToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.pfToolStripMenuItem.Text = "Заказы";
-            this.pfToolStripMenuItem.Click += new System.EventHandler(this.pfToolStripMenuItem_Click);
             // 
             // подтвердитьЗаказыToolStripMenuItem
             // 

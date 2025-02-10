@@ -3,10 +3,16 @@ using System.Windows.Forms;
 
 namespace DemoPosuda.CustomContrrols
 {
+    /// <summary>
+    /// Заказы
+    /// </summary>
     public partial class ZakazControl : UserControl
     {
         Zakaz zakaz;
 
+        /// <summary>
+        /// ктор
+        /// </summary>
         public ZakazControl(Zakaz zakaz)
         {
             InitializeComponent();
@@ -14,6 +20,9 @@ namespace DemoPosuda.CustomContrrols
             SetDataToControllsZakaz();
         }
 
+        /// <summary>
+        /// Заполнение формы
+        /// </summary>
         private void SetDataToControllsZakaz()
         {
             labelArticul.Text = zakaz.Tovar.articyl_tovar.ToString();

@@ -34,6 +34,9 @@ namespace DemoPosuda.Forms
             ShowTovar();
         }
 
+        /// <summary>
+        /// Отображение количества товаров
+        /// </summary>
         private void SetCurrentCountTovar()
         {
             if (tovarClientList != null)
@@ -81,6 +84,9 @@ namespace DemoPosuda.Forms
                 {
                     labelUserFio.Text += " Клиент";
                     pictureBoxCan.Visible = true;
+                    AddТоварToolStripMenuItem.Enabled = false;
+                    pfToolStripMenuItem.Enabled = false;
+                    просмотрПользователейToolStripMenuItem.Enabled = false;
                 }
 
             }
@@ -267,18 +273,27 @@ namespace DemoPosuda.Forms
             ShowTovar();
         }
 
+        /// <summary>
+        /// Форма просмотра пользователей
+        /// </summary>
         private void просмотрПользователейToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var klient = new KlientList();
             klient.ShowDialog();
         }
 
+        /// <summary>
+        /// Обновление количества товаров
+        /// </summary>
         public void UpdateCountTovar(Tovar tovar)
         {
             tovarClientList.Add(tovar);
             SetCurrentCountTovar();
         }
 
+        /// <summary>
+        /// Форма корзины
+        /// </summary>
         private void pictureBoxCan_Click(object sender, EventArgs e)
         {
             var canForm = new CanForm(tovarClientList, user);
@@ -290,11 +305,9 @@ namespace DemoPosuda.Forms
             }
         }
 
-        private void pfToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Форма для подтверджения заказов
+        /// </summary>
         private void подтвердитьЗаказыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var newGistForm = new HistoryZakaz();
