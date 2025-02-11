@@ -97,7 +97,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="name_tovar" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TypeClient">
@@ -406,7 +406,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name_tovar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Tovar" Relationship="Self.FK_Tovar_TovarName" FromRole="TovarName" ToRole="Tovar" />
         </EntityType>

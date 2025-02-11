@@ -1,0 +1,508 @@
+USE [master]
+GO
+/****** Object:  Database [KorobeynikovaPosuda]    Script Date: 11.02.2025 14:05:35 ******/
+CREATE DATABASE [KorobeynikovaPosuda]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'KorobeynikovaPosuda', FILENAME = N'C:\Users\Korobeynikova\KorobeynikovaPosuda.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'KorobeynikovaPosuda_log', FILENAME = N'C:\Users\Korobeynikova\KorobeynikovaPosuda_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [KorobeynikovaPosuda].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET  MULTI_USER 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET QUERY_STORE = OFF
+GO
+USE [KorobeynikovaPosuda]
+GO
+/****** Object:  Table [dbo].[Clietn]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Clietn](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id_ type_client] [int] NULL,
+	[name_client] [nvarchar](255) NULL,
+	[directort_client] [nvarchar](255) NULL,
+	[email_client] [nvarchar](255) NULL,
+	[phone_client] [nvarchar](255) NULL,
+	[index_client] [float] NULL,
+	[adress_client] [nvarchar](255) NULL,
+	[inn_client] [float] NULL,
+	[rate_client] [float] NULL,
+ CONSTRAINT [PK_Clietn] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Postavchik]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Postavchik](
+	[id] [int] NOT NULL,
+	[name_post] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Postavchik] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Proizvod]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Proizvod](
+	[id] [int] NOT NULL,
+	[name_proizvod] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Proizvod] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Punkt]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Punkt](
+	[id] [int] NOT NULL,
+	[index_punkt] [float] NULL,
+	[town_punkt] [nvarchar](255) NULL,
+	[yl_punkt] [nvarchar](255) NULL,
+	[dom_punkt] [float] NULL,
+ CONSTRAINT [PK_Punkt] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RoleSotrudnik]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RoleSotrudnik](
+	[id] [int] NOT NULL,
+	[role_sotr] [nvarchar](255) NULL,
+ CONSTRAINT [PK_RoleSotrudnik] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Sotrydnik]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Sotrydnik](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id_role_sotr] [int] NULL,
+	[fio_sotr] [nvarchar](255) NULL,
+	[login_sotr] [nvarchar](255) NULL,
+	[pass_sotr] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Sotrydnik] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Status]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Status](
+	[id] [int] NOT NULL,
+	[name_state] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Status] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Tovar]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tovar](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[articyl_tovar] [nvarchar](255) NULL,
+	[id_name_tovar] [int] NULL,
+	[ediz_tovar] [nvarchar](255) NULL,
+	[cost_tovar] [float] NULL,
+	[max_sale_tovar] [float] NULL,
+	[id_proizvod_tovar] [int] NULL,
+	[id_poctavchik_tovar] [int] NULL,
+	[id_kategiry_tovar] [int] NULL,
+	[curent_sale_tovar] [float] NULL,
+	[kolvo_tovar] [float] NULL,
+	[deck_tovar] [nvarchar](255) NULL,
+	[image_tovar] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Tovar] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TovarCategory]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TovarCategory](
+	[id] [int] NOT NULL,
+	[kategory_tovar] [nvarchar](255) NULL,
+ CONSTRAINT [PK_TovarCategory] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TovarName]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TovarName](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name_tovar] [nvarchar](255) NULL,
+ CONSTRAINT [PK_TovarName] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TypeClient]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TypeClient](
+	[id] [int] NOT NULL,
+	[type_client] [nvarchar](255) NULL,
+ CONSTRAINT [PK_TypeClient] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Zakaz]    Script Date: 11.02.2025 14:05:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Zakaz](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id_artic_zakaz] [int] NULL,
+	[kolvo_tovar_in_zakaz] [float] NULL,
+	[data_zakaz] [datetime] NULL,
+	[data_dostav_zakaz] [datetime] NULL,
+	[id_punkt_zakaz] [int] NULL,
+	[id_name_client] [int] NULL,
+	[kod_zakaz] [float] NULL,
+	[id_state_zakaz] [int] NULL,
+ CONSTRAINT [PK_Zakaz] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Clietn] ON 
+
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (0, 1, N'test', N'Коробейникова Алина Дмитриевна', N'testte@stt,es', N'4 444 353 54 35', 342432536, NULL, 342322, 3)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (1, 1, N'База Строитель', N'Иванова Александра Ивановна', N'aleksandraivanova@ml.ru', N'7 493 123 45 67', 652050, N'Кемеровская область, город Юрга, ул. Лесная, 15', 2222455179, 7)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (2, 2, N'Паркет 29', N'Петров Василий Петрович', N'vppetrov@vl.ru', N'7 987 123 56 78', 164500, N'Архангельская область, город Северодвинск, ул. Строителей, 18', 3333888520, 7)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (3, 3, N'Стройсервис', N'Соловьев Андрей Николаевич', N'ansolovev@st.ru', N'7 812 223 32 00', 188910, N'Ленинградская область, город Приморск, ул. Парковая, 21', 4440391035, 7)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (4, 1, N'Ремонт и отделка', N'Воробьева Екатерина Валерьевна', N'ekater@ina,vo', N'7 444 222 33 11', 1445454, N'Московская область, город Реутов, ул. Свободы, 51', 111152, 5)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (5, 1, N'МонтажПро', N'Степанов Степан Сергеевич', N'stepan@ovs,te', N'7 912 888 33 33', 3095005465, N'Белгородская область, город Старый Оскол, ул. Рабочая, 122', 555243, 10)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (6, 5, N'Степанова Анна Сергеевна', NULL, N'stepa@smail.ru', N'7 598 412 66 47', 197910, N'Ленинградская область, город Гатчина, ул. Ленина, 2', 4701152545, 1)
+INSERT [dbo].[Clietn] ([id], [id_ type_client], [name_client], [directort_client], [email_client], [phone_client], [index_client], [adress_client], [inn_client], [rate_client]) VALUES (7, 1, N'TEST', N'TEST', N'TESTTE@STT,ES', N'7 956 343 42 34', 6246234724, NULL, 324235, 10)
+SET IDENTITY_INSERT [dbo].[Clietn] OFF
+GO
+INSERT [dbo].[Postavchik] ([id], [name_post]) VALUES (1, N'Максидом')
+INSERT [dbo].[Postavchik] ([id], [name_post]) VALUES (2, N'Домовой')
+GO
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (1, N'Webber')
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (2, N'Luminarc')
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (3, N'Нева')
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (4, N'Tefal')
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (5, N'Solaris')
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (6, N'Galaxy')
+INSERT [dbo].[Proizvod] ([id], [name_proizvod]) VALUES (7, N'Эмаль')
+GO
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (1, 344288, N' г. Краснокаменск', N' ул. Чехова', 1)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (2, 614164, N' г.Краснокаменск', N' ул. Степная', 30)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (3, 394242, N' г. Краснокаменск', N' ул. Коммунистическая', 43)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (4, 660540, N' г. Краснокаменск', N' ул. Солнечная', 25)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (5, 125837, N' г. Краснокаменск', N' ул. Шоссейная', 40)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (6, 125703, N' г. Краснокаменск', N' ул. Партизанская', 49)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (7, 625283, N' г. Краснокаменск', N' ул. Победы', 46)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (8, 614611, N' г. Краснокаменск', N' ул. Молодежная', 50)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (9, 454311, N' г.Краснокаменск', N' ул. Новая', 19)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (10, 660007, N' г.Краснокаменск', N' ул. Октябрьская', 19)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (11, 603036, N' г. Краснокаменск', N' ул. Садовая', 4)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (12, 450983, N' г.Краснокаменск', N' ул. Комсомольская', 26)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (13, 394782, N' г. Краснокаменск', N' ул. Чехова', 3)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (14, 603002, N' г. Краснокаменск', N' ул. Дзержинского', 28)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (15, 450558, N' г. Краснокаменск', N' ул. Набережная', 30)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (16, 394060, N' г.Краснокаменск', N' ул. Фрунзе', 43)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (17, 410661, N' г. Краснокаменск', N' ул. Школьная', 50)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (18, 625590, N' г. Краснокаменск', N' ул. Коммунистическая', 20)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (19, 625683, N' г. Краснокаменск', N' ул. 8 Марта', 23)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (20, 400562, N' г. Краснокаменск', N' ул. Зеленая', 32)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (21, 614510, N' г. Краснокаменск', N' ул. Маяковского', 47)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (22, 410542, N' г. Краснокаменск', N' ул. Светлая', 46)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (23, 620839, N' г. Краснокаменск', N' ул. Цветочная', 8)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (24, 443890, N' г. Краснокаменск', N' ул. Коммунистическая', 1)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (25, 603379, N' г. Краснокаменск', N' ул. Спортивная', 46)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (26, 603721, N' г. Краснокаменск', N' ул. Гоголя', 41)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (27, 410172, N' г. Краснокаменск', N' ул. Северная', 13)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (28, 420151, N' г. Краснокаменск', N' ул. Вишневая', 32)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (29, 125061, N' г. Краснокаменск', N' ул. Подгорная', 8)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (30, 630370, N' г. Краснокаменск', N' ул. Шоссейная', 24)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (31, 614753, N' г. Краснокаменск', N' ул. Полевая', 35)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (32, 426030, N' г. Краснокаменск', N' ул. Маяковского', 44)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (33, 450375, N' г. Краснокаменск ', N' ул. Клубная', 44)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (34, 625560, N' г. Краснокаменск', N' ул. Некрасова', 12)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (35, 630201, N' г. Краснокаменск', N' ул. Комсомольская', 17)
+INSERT [dbo].[Punkt] ([id], [index_punkt], [town_punkt], [yl_punkt], [dom_punkt]) VALUES (36, 190949, N' г. Краснокаменск', N' ул. Мичурина', 26)
+GO
+INSERT [dbo].[RoleSotrudnik] ([id], [role_sotr]) VALUES (1, N'Администратор')
+INSERT [dbo].[RoleSotrudnik] ([id], [role_sotr]) VALUES (2, N'Менеджер')
+INSERT [dbo].[RoleSotrudnik] ([id], [role_sotr]) VALUES (3, N'Клиент')
+GO
+SET IDENTITY_INSERT [dbo].[Sotrydnik] ON 
+
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (0, 3, N'Коробейникова Алина Дмитриевна', N'test', N'test')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (1, 1, N'Федоров Глеб Михайлович', N'o@outlook.com', N'2L6KZG')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (2, 1, N'Семенова Софья Дмитриевна', N'hr6zdl@yandex.ru', N'uzWC67')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (3, 1, N'Васильев Егор Германович', N'kaft93x@outlook.com', N'8ntwUp')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (4, 2, N'Смирнова Ирина Александровна', N'dcu@yandex.ru', N'YOyhfR')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (5, 2, N'Петров Андрей Владимирович', N'19dn@outlook.com', N'RSbvHv')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (6, 2, N'Егоров Максим Андреевич', N'pa5h@mail.ru', N'rwVDh9')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (7, 3, N'Никитин Артур Алексеевич', N'281av0@gmail.com', N'LdNyos')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (8, 3, N'Киселев Максим Сергеевич', N'8edmfh@outlook.com', N'gynQMT')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (9, 3, N'Борисов Тимур Егорович', N'sfn13i@mail.ru', N'AtnDjr')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (10, 3, N'Климов Арсений Тимурович', N'g0orc3x1@outlook.com', N'JlFRCZ')
+INSERT [dbo].[Sotrydnik] ([id], [id_role_sotr], [fio_sotr], [login_sotr], [pass_sotr]) VALUES (11, 3, N'TEST', N'TEST', N'TEST')
+SET IDENTITY_INSERT [dbo].[Sotrydnik] OFF
+GO
+INSERT [dbo].[Status] ([id], [name_state]) VALUES (1, N'Завершен')
+INSERT [dbo].[Status] ([id], [name_state]) VALUES (2, N'Новый ')
+INSERT [dbo].[Status] ([id], [name_state]) VALUES (3, N'Потвержден')
+GO
+SET IDENTITY_INSERT [dbo].[Tovar] ON 
+
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (1, N'C367R6', 1, N'шт.', 3600, 15, 1, 1, 1, 3, 7, N'Webber BE-336/6 6 пр. серебристый', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (2, N'C425F8', 6, N'шт.', 5990, 15, 3, 2, 4, 5, 9, N'Mason Cash Classic 12 предметов серый', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (3, N'D026R4', 3, N'шт.', 1800, 25, 3, 2, 3, 4, 2, N'НЕВА МЕТАЛЛ ПОСУДА Карелия 2328, 28 см', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (4, N'D036H2', 3, N'шт.', 1960, 5, 3, 1, 3, 5, 12, N'НЕВА МЕТАЛЛ ПОСУДА Алтай индукционная, 26 см', N'D036H2.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (5, N'D548T5', 2, N'шт.', 1700, 15, 2, 2, 2, 4, 10, N'Luminarc Every Day G0566, 6 персон, 18 предм.', N'D548T5.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (6, N'D630H5', 1, N'шт.', 2000, 10, 1, 1, 1, 3, 8, N'Webber BE-621/6 стальной', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (7, N'D644G3', 1, N'шт.', 3500, 5, 1, 2, 1, 3, 8, N'Webber ВЕ-620/8 8 пр. стальной', N'D644G3.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (8, N'F735F5', 3, N'шт.', 1270, 10, 3, 2, 3, 2, 4, N'НЕВА МЕТАЛЛ ПОСУДА Домашняя 7424, съемная ручка, 24 см', N'F735F5.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (9, N'F835F5', 6, N'шт.', 732, 10, 5, 2, 2, 2, 9, N'SOLARIS S1605: 6 тарелок 180мм в контейнере', N'F835F5.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (10, N'F835H6', 5, N'шт.', 2130, 10, 3, 2, 1, 2, 5, N'цветок Розы', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (11, N'F836E5', 4, N'шт.', 4600, 20, 4, 1, 3, 2, 6, N'Tefal Ingenio Chef Red L6598672 3 пр. бордовый', N'F836E5.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (12, N'F934E5', 11, N'шт.', 1200, 10, 3, 1, 4, 3, 5, N'ROSSI для подачи из керамики 28х18 см ', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (13, N'G405K9', 6, N'шт.', 240, 5, 5, 2, 4, 4, 23, N'SOLARIS S1607: 6 стаканов 0,1л в контейнере', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (14, N'H482Y6', 1, N'шт.', 2300, 15, 2, 2, 1, 5, 12, N'NoLuminarc Cadix L0300, 6 персон, 19 предм.', N'H482Y6.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (15, N'J468K6', 4, N'шт.', 1390, 25, 6, 2, 3, 2, 13, N'GALAXY GL9801 2 пр. синий', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (16, N'K036S3', 6, N'шт.', 2990, 5, 6, 1, 2, 5, 15, N'GALAXY GL9507 6 пр. коричневый', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (17, N'K935B6', 10, N'шт.', 1200, 5, 3, 2, 4, 3, 9, N'«Кото», 0,19 л 10 см красный, фарфор', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (18, N'L346D4', 7, N'шт.', 329, 5, 3, 1, 4, 5, 18, N'Pasabahce Basic, 370 мл, 2 предм., 2 персоны', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (19, N'M045H6', 1, N'шт.', 1499, 15, 7, 1, 1, 4, 7, N'СтальЭмаль 1с33/1 6 пр. белоснежный /маки ', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (20, N'M527Y7', 8, N'шт.', 1999, 30, 3, 1, 1, 3, 6, N'5 л Наша Посуда антипригарный', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (21, N'N835D4', 1, N'шт.', 2100, 10, 6, 2, 1, 3, 5, N'GALAXY GL9512 4 пр. фиолетовый', N'N835D4.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (22, N'N835F5', 5, N'шт.', 744, 5, 4, 2, 1, 3, 13, N'Tefal 208AC00/1043, 2.3 л, 23 см', N'N835F5.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (23, N'S257G5', 6, N'шт.', 2300, 10, 4, 1, 4, 4, 8, N'O CUISINE 333SA95/6142', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (24, N'S306J8', 9, N'шт.', 409, 10, 4, 2, 4, 2, 14, N' б/деколи(палевый) 17,5х8 см 1,5 л', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (25, N'S413D4', 1, N'шт.', 4500, 15, 7, 2, 1, 3, 15, N'СтальЭмаль 7DA025S 6 пр. слоновая кость', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (26, N'S835H6', 5, N'шт.', 1600, 15, 4, 2, 1, 4, 13, N'Expert СЭ-008, 4.5 л', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (27, N'V493H5', 6, N'шт.', 6000, 15, 4, 1, 4, 4, 18, N'Tefal Ingenio RED 9 предметов ', NULL)
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (28, N'А112Т4', 1, N'шт.', 2600, 30, 1, 1, 1, 4, 6, N'Webber BE-335/6 6 пр. серебристый', N'А112Т4.jpg')
+INSERT [dbo].[Tovar] ([id], [articyl_tovar], [id_name_tovar], [ediz_tovar], [cost_tovar], [max_sale_tovar], [id_proizvod_tovar], [id_poctavchik_tovar], [id_kategiry_tovar], [curent_sale_tovar], [kolvo_tovar], [deck_tovar], [image_tovar]) VALUES (31, N'996744', 12, N'2L6KZG', 34232, NULL, 5, 1, 1, NULL, 5, N'test', NULL)
+SET IDENTITY_INSERT [dbo].[Tovar] OFF
+GO
+INSERT [dbo].[TovarCategory] ([id], [kategory_tovar]) VALUES (1, N'Кастрюли')
+INSERT [dbo].[TovarCategory] ([id], [kategory_tovar]) VALUES (2, N'Сервиз')
+INSERT [dbo].[TovarCategory] ([id], [kategory_tovar]) VALUES (3, N'Сковорода')
+INSERT [dbo].[TovarCategory] ([id], [kategory_tovar]) VALUES (4, N'Посуда')
+GO
+SET IDENTITY_INSERT [dbo].[TovarName] ON 
+
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (0, N'test')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (1, N'Набор кастрюль')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (2, N'Столовый сервиз')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (3, N'Сковорода')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (4, N'Набор сковород')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (5, N'Кастрюля для запекания')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (6, N'Набор посуды')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (7, N'Набор кружек')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (8, N'Казан')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (9, N'Ковш')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (10, N'Салатник')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (11, N'Сервировочное блюдо')
+INSERT [dbo].[TovarName] ([id], [name_tovar]) VALUES (12, N'Test2')
+SET IDENTITY_INSERT [dbo].[TovarName] OFF
+GO
+INSERT [dbo].[TypeClient] ([id], [type_client]) VALUES (1, N'ЗАО')
+INSERT [dbo].[TypeClient] ([id], [type_client]) VALUES (2, N'ООО')
+INSERT [dbo].[TypeClient] ([id], [type_client]) VALUES (3, N'ПАО')
+INSERT [dbo].[TypeClient] ([id], [type_client]) VALUES (4, N'ОАО')
+INSERT [dbo].[TypeClient] ([id], [type_client]) VALUES (5, N'ФизЛицо')
+GO
+SET IDENTITY_INSERT [dbo].[Zakaz] ON 
+
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (1, 1, 2, CAST(N'2022-05-05T00:00:00.000' AS DateTime), CAST(N'2022-05-11T00:00:00.000' AS DateTime), 13, 1, 301, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (2, 2, 3, CAST(N'2022-05-05T00:00:00.000' AS DateTime), CAST(N'2022-05-11T00:00:00.000' AS DateTime), 12, 2, 302, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (3, 3, 2, CAST(N'2022-05-06T00:00:00.000' AS DateTime), CAST(N'2022-05-12T00:00:00.000' AS DateTime), 13, 2, 303, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (4, 4, 5, CAST(N'2022-05-07T00:00:00.000' AS DateTime), CAST(N'2022-05-13T00:00:00.000' AS DateTime), 14, 6, 304, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (5, 5, 10, CAST(N'2022-05-09T00:00:00.000' AS DateTime), CAST(N'2022-05-15T00:00:00.000' AS DateTime), 15, 4, 305, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (6, 8, 1, CAST(N'2022-05-09T00:00:00.000' AS DateTime), CAST(N'2022-05-15T00:00:00.000' AS DateTime), 16, 5, 306, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (7, 1, 1, CAST(N'2022-05-10T00:00:00.000' AS DateTime), CAST(N'2022-05-16T00:00:00.000' AS DateTime), 16, 1, 307, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (8, 6, 20, CAST(N'2022-05-11T00:00:00.000' AS DateTime), CAST(N'2022-05-17T00:00:00.000' AS DateTime), 18, 1, 308, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (9, 6, 1, CAST(N'2022-05-12T00:00:00.000' AS DateTime), CAST(N'2022-05-18T00:00:00.000' AS DateTime), 20, 2, 309, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (10, 5, 3, CAST(N'2022-05-12T00:00:00.000' AS DateTime), CAST(N'2022-05-18T00:00:00.000' AS DateTime), 20, 6, 310, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (11, 9, 2, CAST(N'2022-05-05T00:00:00.000' AS DateTime), CAST(N'2022-05-11T00:00:00.000' AS DateTime), 13, 1, 301, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (12, 8, 1, CAST(N'2022-05-05T00:00:00.000' AS DateTime), CAST(N'2022-05-11T00:00:00.000' AS DateTime), 12, 2, 302, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (13, 1, 1, CAST(N'2022-05-06T00:00:00.000' AS DateTime), CAST(N'2022-05-12T00:00:00.000' AS DateTime), 13, 2, 303, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (14, 8, 5, CAST(N'2022-05-07T00:00:00.000' AS DateTime), CAST(N'2022-05-13T00:00:00.000' AS DateTime), 14, 6, 304, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (15, 7, 10, CAST(N'2022-05-09T00:00:00.000' AS DateTime), CAST(N'2022-05-15T00:00:00.000' AS DateTime), 15, 4, 305, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (16, 2, 1, CAST(N'2022-05-09T00:00:00.000' AS DateTime), CAST(N'2022-05-15T00:00:00.000' AS DateTime), 16, 5, 306, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (17, 3, 1, CAST(N'2022-05-10T00:00:00.000' AS DateTime), CAST(N'2022-05-16T00:00:00.000' AS DateTime), 16, 1, 307, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (18, 4, 20, CAST(N'2022-05-11T00:00:00.000' AS DateTime), CAST(N'2022-05-17T00:00:00.000' AS DateTime), 18, 1, 308, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (19, 5, 1, CAST(N'2022-05-12T00:00:00.000' AS DateTime), CAST(N'2022-05-18T00:00:00.000' AS DateTime), 20, 2, 309, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (20, 6, 2, CAST(N'2022-05-12T00:00:00.000' AS DateTime), CAST(N'2022-05-18T00:00:00.000' AS DateTime), 20, 6, 310, 1)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (21, 4, 3, CAST(N'2025-02-10T09:58:38.000' AS DateTime), CAST(N'2025-02-15T09:58:38.000' AS DateTime), 1, 0, 671, 2)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (22, 3, 1, CAST(N'2025-02-10T09:58:38.000' AS DateTime), CAST(N'2025-02-15T09:58:38.000' AS DateTime), 1, 0, 737, 3)
+INSERT [dbo].[Zakaz] ([id], [id_artic_zakaz], [kolvo_tovar_in_zakaz], [data_zakaz], [data_dostav_zakaz], [id_punkt_zakaz], [id_name_client], [kod_zakaz], [id_state_zakaz]) VALUES (23, 8, 10, CAST(N'2025-02-10T11:15:47.000' AS DateTime), CAST(N'2025-02-15T11:15:47.000' AS DateTime), 27, 0, 863, 3)
+SET IDENTITY_INSERT [dbo].[Zakaz] OFF
+GO
+ALTER TABLE [dbo].[Clietn]  WITH CHECK ADD  CONSTRAINT [FK_Clietn_TypeClient] FOREIGN KEY([id_ type_client])
+REFERENCES [dbo].[TypeClient] ([id])
+GO
+ALTER TABLE [dbo].[Clietn] CHECK CONSTRAINT [FK_Clietn_TypeClient]
+GO
+ALTER TABLE [dbo].[Sotrydnik]  WITH CHECK ADD  CONSTRAINT [FK_Sotrydnik_RoleSotrudnik] FOREIGN KEY([id_role_sotr])
+REFERENCES [dbo].[RoleSotrudnik] ([id])
+GO
+ALTER TABLE [dbo].[Sotrydnik] CHECK CONSTRAINT [FK_Sotrydnik_RoleSotrudnik]
+GO
+ALTER TABLE [dbo].[Tovar]  WITH CHECK ADD  CONSTRAINT [FK_Tovar_Postavchik] FOREIGN KEY([id_poctavchik_tovar])
+REFERENCES [dbo].[Postavchik] ([id])
+GO
+ALTER TABLE [dbo].[Tovar] CHECK CONSTRAINT [FK_Tovar_Postavchik]
+GO
+ALTER TABLE [dbo].[Tovar]  WITH CHECK ADD  CONSTRAINT [FK_Tovar_Proizvod] FOREIGN KEY([id_proizvod_tovar])
+REFERENCES [dbo].[Proizvod] ([id])
+GO
+ALTER TABLE [dbo].[Tovar] CHECK CONSTRAINT [FK_Tovar_Proizvod]
+GO
+ALTER TABLE [dbo].[Tovar]  WITH CHECK ADD  CONSTRAINT [FK_Tovar_TovarCategory] FOREIGN KEY([id_kategiry_tovar])
+REFERENCES [dbo].[TovarCategory] ([id])
+GO
+ALTER TABLE [dbo].[Tovar] CHECK CONSTRAINT [FK_Tovar_TovarCategory]
+GO
+ALTER TABLE [dbo].[Tovar]  WITH CHECK ADD  CONSTRAINT [FK_Tovar_TovarName] FOREIGN KEY([id_name_tovar])
+REFERENCES [dbo].[TovarName] ([id])
+GO
+ALTER TABLE [dbo].[Tovar] CHECK CONSTRAINT [FK_Tovar_TovarName]
+GO
+ALTER TABLE [dbo].[Zakaz]  WITH CHECK ADD  CONSTRAINT [FK_Zakaz_Clietn] FOREIGN KEY([id_name_client])
+REFERENCES [dbo].[Clietn] ([id])
+GO
+ALTER TABLE [dbo].[Zakaz] CHECK CONSTRAINT [FK_Zakaz_Clietn]
+GO
+ALTER TABLE [dbo].[Zakaz]  WITH CHECK ADD  CONSTRAINT [FK_Zakaz_Punkt] FOREIGN KEY([id_punkt_zakaz])
+REFERENCES [dbo].[Punkt] ([id])
+GO
+ALTER TABLE [dbo].[Zakaz] CHECK CONSTRAINT [FK_Zakaz_Punkt]
+GO
+ALTER TABLE [dbo].[Zakaz]  WITH CHECK ADD  CONSTRAINT [FK_Zakaz_Status] FOREIGN KEY([id_state_zakaz])
+REFERENCES [dbo].[Status] ([id])
+GO
+ALTER TABLE [dbo].[Zakaz] CHECK CONSTRAINT [FK_Zakaz_Status]
+GO
+ALTER TABLE [dbo].[Zakaz]  WITH CHECK ADD  CONSTRAINT [FK_Zakaz_Tovar] FOREIGN KEY([id_artic_zakaz])
+REFERENCES [dbo].[Tovar] ([id])
+GO
+ALTER TABLE [dbo].[Zakaz] CHECK CONSTRAINT [FK_Zakaz_Tovar]
+GO
+USE [master]
+GO
+ALTER DATABASE [KorobeynikovaPosuda] SET  READ_WRITE 
+GO

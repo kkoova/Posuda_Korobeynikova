@@ -203,7 +203,7 @@ namespace DemoPosuda.Forms
                 if (!string.IsNullOrEmpty(findText))
                 {
                     query = query
-                        .Where(x => x.deck_tovar.ToLower().StartsWith(findText.ToLower()));
+                        .Where(x => x.TovarName.name_tovar.ToLower().StartsWith(findText.ToLower()));
                 }
 
                 if (radioButtonDown.Checked)

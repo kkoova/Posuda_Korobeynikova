@@ -32,14 +32,9 @@ namespace DemoPosuda.Forms
         {
             using (var context = new KorobeynikovaPosudaEntities())
             {
-                var name = context.TovarName.ToList();
                 var categoty = context.TovarCategory.ToList();
                 var post = context.Postavchik.ToList();
                 var proizv = context.Proizvod.ToList();
-
-                comboBoxName.DataSource = name;
-                comboBoxName.DisplayMember = "name_tovar";
-                comboBoxName.ValueMember = "id";
 
                 comboBoxCategoty.DataSource = categoty;
                 comboBoxCategoty.DisplayMember = "kategory_tovar";
@@ -63,7 +58,7 @@ namespace DemoPosuda.Forms
             Text = "Обновление товара";
             buttonAdd.Text = "Обновить товар";
 
-            comboBoxName.SelectedValue = tovar.id_name_tovar;
+            textBoxName.Text = tovar.TovarName.name_tovar;
             comboBoxCategoty.SelectedValue = tovar.id_kategiry_tovar;
             numericUpDownColVo.Value = Convert.ToDecimal(tovar.kolvo_tovar);
             textBoxEdIS.Text = tovar.ediz_tovar;
@@ -99,24 +94,44 @@ namespace DemoPosuda.Forms
         /// </summary>
         private void AddOrUpdateTovarNew()
         {
-            var name = Convert.ToInt16(comboBoxName.SelectedValue);
+            var name = textBoxName.Text;
             var kat = Convert.ToInt16(comboBoxCategoty.SelectedValue);
             var kolVo = Convert.ToDouble(numericUpDownColVo.Value);
             var edIs = textBoxEdIS.Text;
             var postav = Convert.ToInt16(comboBoxPostavchik.SelectedValue);
             var cost = Convert.ToDouble(textBoxCost.Text);
             var deck = textBoxDeck.Text;
-            var image = string.Empty;
+            string image = null;
             if (buttonImage.Text != "Добавить изображение") { image = buttonImage.Text; }
             var proizv = Convert.ToInt16(comboBoxProizvod.SelectedValue);
 
+            Random random = new Random();
+
             using (var context = new KorobeynikovaPosudaEntities())
             {
+                var idName = context.TovarName
+                    .FirstOrDefault(n => n.name_tovar == name);
+
+                if (idName == null) 
+                {
+                    var newName = new TovarName
+                    {
+                        name_tovar = name,
+                    };
+
+                    context.TovarName.Add(newName);
+                    context.SaveChanges();
+                }
+
                 if (tovar == null)
                 {
+                    var idNameTwo = context.TovarName
+                    .FirstOrDefault(n => n.name_tovar == name);
+
                     var newTovar = new Tovar
                     {
-                        id_name_tovar = name,
+                        articyl_tovar = random.Next(100000, 999999).ToString(),
+                        id_name_tovar = idNameTwo.id,
                         ediz_tovar = edIs,
                         cost_tovar = cost,
                         id_poctavchik_tovar = postav,
@@ -131,9 +146,12 @@ namespace DemoPosuda.Forms
                 }
                 else
                 {
+                    var idNameTwo = context.TovarName
+                    .FirstOrDefault(n => n.name_tovar == name);
+
                     var upTovar = context.Tovar.Find(tovar.articyl_tovar);
 
-                    upTovar.id_name_tovar = name;
+                    upTovar.id_name_tovar = idNameTwo.id;
                     upTovar.ediz_tovar = edIs;
                     upTovar.cost_tovar = cost;
                     upTovar.id_poctavchik_tovar = postav;

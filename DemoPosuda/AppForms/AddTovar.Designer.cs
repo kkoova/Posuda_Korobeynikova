@@ -50,10 +50,10 @@
             this.buttonImage = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.comboBoxName = new System.Windows.Forms.ComboBox();
             this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
             this.comboBoxProizvod = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColVo)).BeginInit();
@@ -257,14 +257,6 @@
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // comboBoxName
-            // 
-            this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(160, 155);
-            this.comboBoxName.Name = "comboBoxName";
-            this.comboBoxName.Size = new System.Drawing.Size(237, 31);
-            this.comboBoxName.TabIndex = 21;
-            // 
             // openFileDialogImage
             // 
             this.openFileDialogImage.FileName = "openFileDialogImage";
@@ -287,6 +279,13 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Производтель:";
             // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(160, 156);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(237, 30);
+            this.textBoxName.TabIndex = 5;
+            // 
             // AddTovar
             // 
             this.AcceptButton = this.buttonAdd;
@@ -295,9 +294,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(802, 523);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.comboBoxProizvod);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBoxName);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonImage);
@@ -353,9 +352,9 @@
         private System.Windows.Forms.Button buttonImage;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.ComboBox comboBoxName;
         private System.Windows.Forms.OpenFileDialog openFileDialogImage;
         private System.Windows.Forms.ComboBox comboBoxProizvod;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxName;
     }
 }
